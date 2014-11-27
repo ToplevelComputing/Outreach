@@ -1,0 +1,81 @@
+.accordion-heading {
+  background-color: #0078ba;
+  display: inline-block;
+}
+
+.accordion-heading a {
+  color: white !important;
+}
+
+.accordion-heading span.icon {
+  /*float: right;*/
+  display: inline-block;
+  border-left: 1px white solid;
+  padding: 10px;
+}
+
+.showhide {
+  padding-top: 10px;
+  padding-left: 10px;
+  display: inline-block;
+  font-weight: 100;
+}
+
+.toggletxt {
+  font-weight: 800;
+}
+
+.no-js .accordion .collapse {
+  overflow: visible;
+  display: block;
+  height: auto;
+}
+
+.no-js .accordion-heading {
+  display: none;
+}
+#accordion-expander .accordion-group {
+  border: none !important;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+#accordion-expander .accordion-heading .accordion-toggle {
+  padding: 0;
+  line-height: 16px;
+  line-height: 1.6rem;
+}
+
+#accordion-expander .accordion-inner {
+  padding: 0;
+  border: none;
+  margin-top: 10px;
+}
+
+#accordion-expander a.accordion-toggle {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+
+#accordion-expander .icon {background-image: none;margin-top: -10px !important;margin-left: 10px;}
+
+  .icon-c-down{background-image: url("icon-c-down.png") !important;
+  width: 14px;
+  height: 12px;
+  display: inline-block;
+  background-size: 14px;
+  background-position: 10px 10px;}
+  .icon-c-up{background-image: url("icon-c-up.png") !important;
+  width: 14px;
+  height: 12px;
+  display: inline-block;
+  background-size: 14px;
+  background-position: 10px 10px;
+}
+.ie7 .accordion-heading {width: 400px}
+.ie7 #accordion-expander .accordion-heading span.icon{margin-top: -28px !important; float:right;margin-left:10px !important;}
+.ie8 #accordion-expander .accordion-heading span.icon{margin-top: -8px !important}

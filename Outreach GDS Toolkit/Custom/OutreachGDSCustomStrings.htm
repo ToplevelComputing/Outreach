@@ -1,0 +1,352 @@
+%/FragmentVersion 2
+%[=== String Table Standard =============================================]
+%[Define IDS_TB_LABEL_NEXT = Continue]
+%[Define IDS_TB_LABEL_BACK = Back]
+%[Define IDS_COI_BADDAT = Please enter the date as day, month and year.]
+%[Define dlgLBS_Old = Continue a form already started.]
+%[Define dlgLBS_New = Begin a new blank form.]
+%[Define fragLogonForgottenLink = Forgotten your password?]
+%[Define fragLogonEmail = Email address]
+%[Define fragLogonUser = User name]
+%[Define fragLogonLogonBtn = Log on]
+%[Define fragAccessibilityHelp = Accessibility help]
+%[Define fragMyDetailsLinkNoDisplayName = My details]
+%[Define IDS_UITITLE_OPEN = Select form to open]
+%[Define fragCloseWindow = Close window]
+%[Define dlgKBS_FormOpen = Appplication] 
+%[Define dlgKBS_Radio = Tell us what you want to do:] 
+%[Define dlgKBS_Old = Continue an application] 
+%[Define dlgKBS_New = Start a new application] 
+%[Define dlgKBS_Btn = Continue] 
+%[Define IDS_TB_LABEL_ADDROWANDCLOSE = Add] 
+%[Define IDS_TB_LABEL_CLOSE = Cancel]
+%[Define fragFormCloseTitle = Exit application]
+%[Define fragFormCloseTitleJS = Exit application] 
+%[Define IDS_FORM_CLOSE_TITLE = Exit application] 
+%[Define IDS_ALLDONE_NOSAVE = The application has been closed.]
+%[Define IDS_TB_LABEL_OK = Save and back to main application]
+%[Define fragPDFPrintTitle = Download PDF]%[Define fragPDFPrintBtn = Download]%[Define fragPDFOptPrint = To Download The PDF:]
+
+%/------------------------------------------------------------------------------------------
+%[=== Fragment ToplevelInfo ===============================================================]
+%/------------------------------------------------------------------------------------------
+%[=== Fragment ShareWidgetIncludes ========================================================]
+%/------------------------------------------------------------------------------------------
+%[=== Fragment HTMLVersionIE4 =====================================================================]
+<!doctype html> 
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment HTMLVersionAccess =====================================================================]
+<!doctype html> 
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment HTMLVersionDefault =====================================================================]
+<!doctype html> 
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment FormSectionIE4 ==================================================================]
+%[Expand "HTMLVersion"]
+<!--[if IE 7]> <html class="ie7 no-js" lang="en-US"><![endif]-->
+<!--[if IE 8]> <html class="ie8 no-js" lang="en-US"><![endif]-->
+<!--[if IE 9]> <html class="ie9 no-js" lang="en-US"><![endif]-->
+<html lang="en" class="no-js">
+%[Expand "ToplevelInfo"]
+<head>
+%[Expand "FirstHeadIncludes"]%/
+<!-- AJAXSTART:aj_title -->%/
+<title>%[Form.TitleNoMarkup]</title>
+<!-- AJAXEND:aj_title -->%/
+%[Expand "CustomThemeStyleSheets"]%/
+%[Expand "StandardStyleSheet"]%/
+%[Expand "InternalStyles"]%/
+<!-- AJAXSTART:aj_stylesheet -->%/
+%[Expand "CustomStyleSheet"]
+<!-- AJAXEND:aj_stylesheet -->%/
+%[Expand "FormSectionHeadIncludes"]%/ <!--form head settings expanded here, e.g. meta tags, scripts etc.-->
+%[Expand "CustomHeadIncludes"]%/
+%[if Css <> ""]
+<style>%[Css]</style>
+%[endif]
+%[if Js <> ""]
+<script type="text/javascript">
+%[Js]
+</script>
+%[endif]
+%[if Summary <> ""]
+<script type="text/javascript">
+%[Summary]
+</script>
+%[endif]
+<script type="text/javascript">
+function DisableProgressBar() {
+%[If DisableProgressBar <> ""]
+%[DisableProgressBar]
+%[endif]
+}
+</script>
+</head>
+
+<!-- AJAXSTART:aj_body -->%/
+<body class="formsectionbody%[If IsModal<>""] modalform%[Endif]" id="aj_body" onload="%[Expand "OnLoadHandler"]" %[Expand "FormSectionBodyIncludes"]>%/
+%[Expand "StartOfFormSectionBody"]%/ Opens <div><form><div>
+%/
+<!-- AJAXSTART:aj_formheader -->%/
+<div class="aj_formheader" id="aj_formheader">%/
+%[Expand "FormSectionHeader"]%/
+</div>%/
+<!-- AJAXEND:aj_formheader -->%/
+
+<!-- Main content -->
+%[Expand "MainContentIE4"]%/
+<!-- End of main content -->
+</div>
+</form>
+<!-- Footer -->
+%[Expand "FormSectionFooterContainer"]
+<!-- End of footer -->
+</div>
+</div>
+</body>
+<!-- AJAXEND:aj_body -->%/
+</html>
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment DialogMainIE4 ==================================================================]
+%[Expand "HTMLVersionIE4"]
+<!--[if IE 7]> <html class="ie7 no-js" lang="en-US"><![endif]-->
+<!--[if IE 8]> <html class="ie8 no-js" lang="en-US"><![endif]-->
+<!--[if IE 9]> <html class="ie9 no-js" lang="en-US"><![endif]-->
+<html lang="en" class="no-js">
+%[Expand "ToplevelInfo"]
+<head>
+%[Expand "FirstHeadIncludes"]%/
+<!-- AJAXSTART:aj_title -->%/
+<title>%[Dialog.Title]</title>
+<!-- AJAXEND:aj_title -->%/
+%[Expand "CustomThemeStyleSheets"]%/
+%[Expand "StandardStyleSheet"]%/
+%[Expand "InternalStyles"]%/
+<!-- AJAXSTART:aj_stylesheet -->%/
+%[Expand "CustomStyleSheet"]
+<!-- AJAXEND:aj_stylesheet -->%/
+%[Expand "DialogHeadIncludes"]%/ <!--dialog head settings expanded here, e.g. meta tags, scripts etc.-->
+%[Expand "CustomHeadIncludes"]%/
+<script type="text/javascript">
+function DisableProgressBar() {
+}
+</script>
+</head>
+
+<!-- AJAXSTART:aj_body -->%/
+<body class="%[Expand "DialogBodyClass"]"%/
+ id="aj_body" onload="%[Expand "OnLoadHandler"]" %[Expand "DialogBodyIncludes"]>%/
+%[Expand "StartOfDialogBody"]%/<!--Opens <div><form><div class="%[Dialog.Type]"><div>-->
+
+%[Expand "DialogHeaderCustomisable1"]%/
+<div> </div>%/<!-- Div works around IE top-margin bug; search JS for dialogoutertopmarginfix for details -->
+<div id="tldialogouter" class="dialogouter"%[If Dialog.Width<>""] style="width:%[Dialog.Width]"%[Endif]>%/
+<div id="tldialoginner" class="dialoginner">
+%/ <!-- Generally only form script will set the Dialog.Width[InEms] tokens.
+%/ Default dialog widths are specified in the CSS rather than in the root fragments -->
+%/
+%[Expand "DialogHeaderCustomisable"]%/
+</div><!-- end dialoginner -->
+<div class="dialog">
+
+%[Expand "DialogCustomMessage"]%/
+
+<!-- Dialog main content -->
+%[Expand "DialogMainContentIE4"]%/
+<!-- End of dialog main content -->
+
+<div style="clear:both;"></div>
+</div><!-- end dialog -->
+%[Expand "DialogFooterCustomisable"]
+%[Expand "AccessibleDialogEndLink"]%/
+</div><!-- end dialogouter -->
+%[Expand "DialogFooterCustomisable1"]
+
+</div>
+</form>
+</div>
+<div id="fb-root"></div>%/ <!-- This is needed for the Facebook share widget, it's here so that when shown modally we don't end up with 2 in the DOM -->
+</body>
+<!-- AJAXEND:aj_body -->%/
+</html>%/
+%[ClearVar bInDialog]%/
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment SectionButtonIE4 =====================================================================]
+<!-- Section Button -->%/
+%[If Presentation.SectionButtonType <> "Tabs"]%/
+<div class="%[if Sb.IsCurrent=1]current%[elseif Sb.IsDisabled=1]disabled%[else]enabled%[endif]sectionindicator">%/
+</div>%/
+%[Endif]%/
+<input type="submit" name="%[Sb.SecName]" %/
+class="%[if Sb.IsCurrent=1]current%[elseif Sb.IsDisabled=1]disabled%[else]enabled%[endif]sectionbutton" %/
+%[if Sb.IsDisabled = 1]disabled="disabled"%[endif] value="%[Sb.Label]" %/
+title="%[If DisableProgressBar <> ""]%[Expand "StrictWizardProgressTitle"]%[Else]%[Expand "SectionButtonTitle"]%[EndIf]"/>%/
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment StrictWizardProgressTitle =====================================================================]
+%[ExpandString "fragSectionInactiveTip"]%/
+ %[Sb.Label]%/
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment CaptionIE4 =====================================================================]
+%[If Table.DistinctClassCaptionsImplemented = 1]%/
+%[Expand "DistinctClassCaptions"]%/
+%[Else]%/
+%[Expand "GDSDistinctCaptions"]%/
+%[EndIf]%/
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment GDSDistinctCaptions ============================================================]
+<div style="%[Obj.Style]" class="fieldrow clearfix">
+
+<div class="%[Expand "IconColumnClasses"]">%/
+%[Expand "InvokeMandatoryIconOrFieldError"]%/-- captions never have mandatory icons but they can have field errors.
+</div>
+
+%[If Obj.CaptionIsFullWidth = 1]%/
+<div class="fieldmergedcolumn captionitem">%[Expand "LinkedButtonsBeforeField"]%/
+%[If Obj.HasLinkedButton=1]<div class="captionwithlinkedbutton">%[Endif]%/
+%[Obj.CaptionLeftText]%/
+%[If Obj.HasLinkedButton=1]</div>%[Endif]%/
+%[Expand "LinkedButtonsAfterField"]%[Expand "InlineErrorText"]</div>
+%[Else]%/
+<div class="fieldcaptioncolumn"><div class="fieldcaptioncolumn_inner"><div class="fieldcaptioncolumn_alignleft">%/
+%[Obj.CaptionLeftText]</div></div></div>
+<div class="fieldinputcolumn">%[Expand "LinkedButtonsBeforeField"]%/
+%[If Obj.HasLinkedButton=1]<div class="captionwithlinkedbutton">%[Endif]%/
+%[Obj.CaptionRightText]%/
+%[If Obj.HasLinkedButton=1]</div>%[Endif]%/
+%[Expand "LinkedButtonsAfterField"]%[Expand "InlineErrorText"]</div>
+%[Endif]%/
+
+<div class="fieldrightcolumn"></div>
+
+</div><!-- end fieldrow -->
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment ColumnHeadingsIE4 =====================================================================]
+%[If Table.ButtonsOnRightImplemented = 1]%/
+%[Expand "ColumnHeadingsWithRBSupport"]%/
+%[Else]
+%[Expand "GDSColumnHeadings"]%/
+%[EndIf]%/
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment GDSColumnHeadings =====================================================================]
+%[If Table.FirstCol() = 1]%/
+%[Do]%/
+%[If Col.IsShownInHtmlTable = 1]%/
+<th %[Col.Width] scope="col" %[If Col.HeadingStyle <> ""]class="%[Col.HeadingStyle]"%[Endif]>%/
+%[If Presentation.TableHeadingsAsLinks = 1]%/
+<a href="%[Form.URL]&amp;I_PAGENUM=%[Form.PageNum]&amp;BA_%[Group.Name]_%[Obj.Name]" 
+onclick="return ReloadLinkClicked('BA_%[Group.Name]_%[Obj.Name]');">%[Col.Heading]</a>%/
+%[Else]%/
+%[Col.Heading]%/
+%[Endif]%/
+</th>
+%[Endif]%/
+%[If Table.NextCol() = 0]%[Break]%[Endif]%/
+%[Loop]%/
+%[Endif]%/
+<th id="BTD_%[Group.Name]:0" title="%[ExpandString "fragTableEditTip"]" scope="col" style="width: 1%%;%[If Table.SuppressEditColumn = 1] display: none;%[Endif]" class="tleditcolumn %[If Table.ShowEditColumnWhenEnabled = 1]tleditcolumnconditional%[Endif]"></th>
+%[If Table.SuppressSelectColumn = 0]<th title="%[ExpandString "fragTableSelectTip"]" scope="col"><i>%[ExpandString "fragTableSelect"]</i></th>%[Endif]
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment TableRowIE4 =====================================================================]
+%[If Table.ButtonsOnRightImplemented = 1]%/
+%[Expand "TableRowWithRBSupport"]%/
+%[Else]
+%[Expand "GDSTableRow"]%/
+%[EndIf]%/
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment GDSTableRow =====================================================================]
+%[If Row.RowIsInlineDlg = 1]%[Expand "RowInlineEditContentIE4"]%[Else]%/
+%[If Row.IsTableRow=1]<!-- AJAXSTART:aj_tablerow_%[Group.Name]_%[Row.Number] -->
+<tr id="aj_tablerow_%[Group.Name]_%[Row.Number]"%[If Row.IsBlank=1] class="tablerowisblank"%[EndIf]>
+%[Else]%/
+<tr%[If Table.SuppressSelectColumn=0] onmouseover="this.className='hover';this.title='%[ExpandString "fragTableSelectRowTip"]';" onmouseout="this.className='';this.title='';"
+onclick="return ReloadLinkClicked('%[Row.SelectButtonName]=1');"%[Endif]>
+%[Endif]%/
+
+%[If Table.FirstCol()=1]%/
+%[Do]%/
+%[If Col.IsShownInHtmlTable=1]%/
+%[If Cell.Skip <> 1]%/
+<td %[Expand "TableCellTitle"]class="%[If Cell.Style<>""]%[Cell.Style]%[Else]%[If Row.IsAltRow=1]tablerowodd%[Else]tableroweven%[Endif]%[Endif]"%/
+%[If Cell.Colspan<>""] colspan="%[Cell.Colspan]"%[Endif]%/
+%[If Cell.Rowspan<>""] rowspan="%[Cell.Rowspan]"%[Endif]%/
+>%/
+%[If Row.IsBlank=1]&nbsp;%[Elseif Col.FieldType="BUTTON"]%[Expand "ButtoncellDataIE4"]%[else]%[If Col.IsHiddenBySign=1]####%[Else]%[If Cell.Text=""]&nbsp;%[Else]%[Cell.Text]%[Endif]%[Endif]%[Endif]%/
+</td>
+%[Endif]%[Endif]%/
+%[If Table.NextCol()=0]%[Break]%[Endif]%/
+%[Loop]%/
+%[Endif]%/
+%[If Table.SuppressSelectColumn=0]%/
+<td class="%[If Row.IsAltRow = 1]tablerowodd%[Else]tableroweven%[Endif] lookupselectcell">%/
+<input type="image" name="%[Row.SelectButtonName]" tabindex="%[Form.TabIndex]" alt="%[ExpandString "fragTableSelectRowTip"]" src="spacer.ofif" class="tliconselect" />%/
+</td>
+%[endif]%/
+%[If Table.SuppressEditColumn=0]%/
+%[If Row.IsBlank<>1]%/
+%[Expand "TableEditColumn"]%/
+%[EndIf]%/
+%[Endif]%/
+%[If Table.SuppressEditColumn=0]%/
+%[Expand "TableEditColumnResponsive"]%/
+%[Endif]%/
+</tr>
+%[If Row.IsTableRow=1]<!-- AJAXEND:aj_tablerow_%[Group.Name]_%[Row.Number] -->%[Endif]%/
+%[Endif]%/
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment TableRowOptionButtonsImage =====================================================================]
+%[If Table.ShowInsertButton = 1]<input type="submit" class="button" name="%[Row.InsertButtonName]:%[Row.Number]" value="Insert" title="%[ExpandString "fragTableInsertTip"]" alt="%[ExpandString "fragTableInsertTip"]" tabindex="%[Form.TabIndex]" />%[Endif]%/
+%[If Table.ShowEditButton = 1]<input type="submit" class="button" name="%[Row.EditButtonName]:%[Row.Number]" value="Edit" title="%[ExpandString "fragTableEditBtnTip"]" alt="%[ExpandString "fragTableEditBtnTip"]" tabindex="%[Form.TabIndex]" />%[Endif]%/
+%[If Table.ShowDeleteButton = 1]<input type="submit" class="button" name="%[Row.DeleteButtonName]:%[Row.Number]" value="Delete" title="%[ExpandString "fragTableDeleteBtnTip"]" alt="%[ExpandString "fragTableDeleteBtnTip"]" tabindex="%[Form.TabIndex]" />%[Endif]%/
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment Help_ErrorIE4 ==================================================================]
+%[Expand "Help_ErrorIE4Script"]%/
+%[Expand "HTMLVersion"]
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+%[Expand "ToplevelInfo"]
+
+<!-- outer fragment for a popup dialog. -->
+<head>
+%[Expand "FirstHeadIncludes"]%/
+<title>%[Dialog.FieldLabel]</title>
+<script src="tlscript.compressed.ojs" type="text/javascript"></script>
+%[Expand "StandardStyleSheet"]%/
+<link rel="stylesheet" type="text/css" href="%[Form.StyleURL]" title="OfficeFormsStyle" />
+<style>
+.tlform .popupheader, .popupcontent {
+line-height: 1.2em;
+}
+p.popupcontent {
+margin-bottom: 1em;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+</head>
+
+<body class="popupmessagearea">
+%[Expand "FormLine"]
+%[Expand "MandatoryHiddenFields"]%/
+
+
+<h1 class="popupheader">%[Dialog.FieldLabel]</h1>
+
+
+<p class="popupcontent">%[Dialog.Message]</p>
+
+<div class="popuptoolbar popuptoolbar_bottom">
+%[if Dialog.IsInline = 1]%/
+<input class="button" type="submit" value="   %[ExpandString "fragDlgOKBtn"]   " title="%[ExpandString "fragDlgOKTip"]" name="BB_OKButton" accesskey="o" />
+%[else]
+<script type="text/javascript"><!--
+  document.write("<input class='button' type='button' value='%[ExpandString "fragCloseWindow"]' name='BackButton' onclick='OnOK();' title='%[ExpandString "fragCloseWindowTip"]' accesskey='c' />");
+//-->
+</script>
+<noscript>
+<input class="button" type="submit" value="   %[ExpandString "fragDlgOKBtn"]   " title="%[ExpandString "fragDlgOKTip"]" name="BB_OKButton" accesskey="o" />
+</noscript>
+%[endif]
+</div>
+
+</form>
+</body>
+</html>
+%/----------------------------------------------------------------------------------------------------

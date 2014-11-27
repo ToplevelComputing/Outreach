@@ -1,0 +1,115 @@
+%/FragmentVersion 2
+%[=== String Table Standard =============================================]
+%[Define IDS_TB_LABEL_NEXT = Continue]
+%[Define IDS_TB_LABEL_BACK = Back]
+%[Define IDS_COI_BADDAT = Please enter the date as day, month and year.]
+%[Define dlgLBS_Old = Continue a form already started.]
+%[Define dlgLBS_New = Begin a new blank form.]
+%[Define fragLogonForgottenLink = Forgotten your password?]
+%[Define fragLogonEmail = Email address]
+%[Define fragLogonUser = User name]
+%[Define fragLogonLogonBtn = Log on]
+%[Define fragAccessibilityHelp = Accessibility help]
+%[Define fragMyDetailsLinkNoDisplayName = My details]
+%[Define IDS_UITITLE_OPEN = Select form to open]
+%[Define fragCloseWindow = Close window]
+%[Define dlgKBS_FormOpen = Appplication] 
+%[Define dlgKBS_Radio = Tell us what you want to do:] 
+%[Define dlgKBS_Old = Continue an application] 
+%[Define dlgKBS_New = Start a new application] 
+%[Define dlgKBS_Btn = Continue] 
+%[Define IDS_TB_LABEL_ADDROWANDCLOSE = Add] 
+%[Define IDS_TB_LABEL_CLOSE = Cancel]
+%[Define fragFormCloseTitle = Exit application]
+%[Define fragFormCloseTitleJS = Exit application] 
+%[Define IDS_FORM_CLOSE_TITLE = Exit application] 
+%[Define IDS_ALLDONE_NOSAVE = The application has been closed.]
+%[Define IDS_TB_LABEL_OK = Save and back to main application]
+%[Define fragPDFPrintTitle = Download PDF]%[Define fragPDFPrintBtn = Download]%[Define fragPDFOptPrint = To Download The PDF:]
+
+%/------------------------------------------------------------------------------------------
+%[=== Fragment ToplevelInfo ===============================================================]
+%/------------------------------------------------------------------------------------------
+%[=== Fragment ShareWidgetIncludes ========================================================]
+%/------------------------------------------------------------------------------------------
+%[=== Fragment HTMLVersionIE4 =====================================================================]
+<!doctype html> 
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment HTMLVersionAccess =====================================================================]
+<!doctype html> 
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment HTMLVersionDefault =====================================================================]
+<!doctype html> 
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment SectionButtonIE4 =====================================================================]
+<!-- Section Button -->%/
+%[If Presentation.SectionButtonType <> "Tabs"]%/
+<div class="%[if Sb.IsCurrent=1]current%[elseif Sb.IsDisabled=1]disabled%[else]enabled%[endif]sectionindicator">%/
+</div>%/
+%[Endif]%/
+<input type="submit" name="%[Sb.SecName]" %/
+class="%[if Sb.IsCurrent=1]current%[elseif Sb.IsDisabled=1]disabled%[else]enabled%[endif]sectionbutton" %/
+%[if Sb.IsDisabled = 1]disabled="disabled"%[endif] value="%[Sb.Label]" %/
+title="%[If DisableProgressBar <> ""]%[Expand "StrictWizardProgressTitle"]%[Else]%[Expand "SectionButtonTitle"]%[EndIf]"/>%/
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment StrictWizardProgressTitle =====================================================================]
+%[ExpandString "fragSectionInactiveTip"]%/
+ %[Sb.Label]%/
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment TableRowOptionButtonsImage =====================================================================]
+%[If Table.ShowInsertButton = 1]<input type="submit" class="button" name="%[Row.InsertButtonName]:%[Row.Number]" value="Insert" title="%[ExpandString "fragTableInsertTip"]" alt="%[ExpandString "fragTableInsertTip"]" tabindex="%[Form.TabIndex]" />%[Endif]%/
+%[If Table.ShowEditButton = 1]<input type="submit" class="button" name="%[Row.EditButtonName]:%[Row.Number]" value="Edit" title="%[ExpandString "fragTableEditBtnTip"]" alt="%[ExpandString "fragTableEditBtnTip"]" tabindex="%[Form.TabIndex]" />%[Endif]%/
+%[If Table.ShowDeleteButton = 1]<input type="submit" class="button" name="%[Row.DeleteButtonName]:%[Row.Number]" value="Delete" title="%[ExpandString "fragTableDeleteBtnTip"]" alt="%[ExpandString "fragTableDeleteBtnTip"]" tabindex="%[Form.TabIndex]" />%[Endif]%/
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment Help_ErrorIE4 ==================================================================]
+%[Expand "Help_ErrorIE4Script"]%/
+%[Expand "HTMLVersion"]
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+%[Expand "ToplevelInfo"]
+
+<!-- outer fragment for a popup dialog. -->
+<head>
+%[Expand "FirstHeadIncludes"]%/
+<title>%[Dialog.FieldLabel]</title>
+<script src="tlscript.compressed.ojs" type="text/javascript"></script>
+%[Expand "StandardStyleSheet"]%/
+<link rel="stylesheet" type="text/css" href="%[Form.StyleURL]" title="OfficeFormsStyle" />
+<style>
+.tlform .popupheader, .popupcontent {
+line-height: 1.2em;
+}
+p.popupcontent {
+margin-bottom: 1em;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+</head>
+
+<body class="popupmessagearea">
+%[Expand "FormLine"]
+%[Expand "MandatoryHiddenFields"]%/
+
+
+<h1 class="popupheader">%[Dialog.FieldLabel]</h1>
+
+
+<p class="popupcontent">%[Dialog.Message]</p>
+
+<div class="popuptoolbar popuptoolbar_bottom">
+%[if Dialog.IsInline = 1]%/
+<input class="button" type="submit" value="   %[ExpandString "fragDlgOKBtn"]   " title="%[ExpandString "fragDlgOKTip"]" name="BB_OKButton" accesskey="o" />
+%[else]
+<script type="text/javascript"><!--
+  document.write("<input class='button' type='button' value='%[ExpandString "fragCloseWindow"]' name='BackButton' onclick='OnOK();' title='%[ExpandString "fragCloseWindowTip"]' accesskey='c' />");
+//-->
+</script>
+<noscript>
+<input class="button" type="submit" value="   %[ExpandString "fragDlgOKBtn"]   " title="%[ExpandString "fragDlgOKTip"]" name="BB_OKButton" accesskey="o" />
+</noscript>
+%[endif]
+</div>
+
+</form>
+</body>
+</html>
+%/----------------------------------------------------------------------------------------------------

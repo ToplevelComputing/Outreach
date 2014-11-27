@@ -1,0 +1,69 @@
+.tabtoolbar .tlsectionbuttons {
+    height: 50px;
+    width: 100%;
+}
+
+.tlsectionbuttons input[type="submit"] {
+    height: 54px;
+    width: 100%;
+}
+
+.tabtoolbar .tlsectionbuttons input[type=submit].disabledsectionbutton{
+    border:none !important;
+}
+
+.tabtoolbar .tlsectionbuttons{
+    border-bottom: 4px solid #dee0e2;
+    border-top: 1px solid #bfc1c3;
+}
+
+.tlnoul, .tlnoli{
+    list-style-type: decimal;
+    list-style-position: inside;
+    position: relative;
+    margin-bottom: -6px;
+}
+
+.tlsectionbuttons .tlnoli input[type="submit"]{
+    white-space: normal
+}
+
+.tabtoolbar .tlsectionbuttons li {
+    float: left;
+}
+
+.currentsectionbutton, .enabledsectionbutton, .disabledsectionbutton {
+    background-image: none;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.currentsectionbutton,input[type="submit"].currentsectionbutton {
+    border-bottom: 4px solid #005ea5;
+    font-weight: bold;
+}
+
+.sectionbuttoncontainer input[type="submit"].enabledsectionbutton, .sectionbuttoncontainer input[type="submit"].disabledsectionbutton {
+   border-bottom: 4px solid transparent;
+}
+
+span.sectionbuttoncontainerhover input[type="submit"].enabledsectionbutton {
+    border-bottom: 4px solid #999fd5;
+}
+
+.tabtoolbar .currentsectionbutton, .tabtoolbar .enabledsectionbutton, .tabtoolbar .disabledsectionbutton {
+    margin-left: 0px;
+    border: none;
+    border-width: 0px;
+    border-style:none;
+    border-color:transparent;
+}
+.tabtoolbar .currentsectionbutton, .tabtoolbar .enabledsectionbutton, .tabtoolbar .disabledsectionbutton
+{
+    border-top: 1px none;
+    border-bottom: 4px none;
+}
+
+.IE .currentsectionbutton{
+    padding-top: 0px;
+}

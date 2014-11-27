@@ -1,0 +1,487 @@
+﻿/*
+	CSS Structure
+	1. General form layout
+	2. Section buttons & form options
+	3. Error and information message boxes
+	4. Inline errors, alerts and information
+	5. Help text
+	6. Mandatory & optional fields
+	7. Buttons and links
+	8. Indented headings
+	9. Dialogs
+*/
+
+
+/* 1. General form layout */
+.fieldinputcolumn {
+	width: 66%
+}
+
+.fieldmergedcolumn {
+	width:95%
+}
+
+/* 2. Section buttons & form options */
+.tlmaincontent,.tlmaincontent_nosecbuttons,.headerarea2_nosecbuttons {
+	margin-left:180px;
+	margin-right:20px
+}
+
+.CloseDialog .tabtoolbar .tlsectionbuttons,.KeyBasedStartDialog .tabtoolbar .tlsectionbuttons {
+	border-bottom:none;
+	border-top:none
+}
+
+.tlsectiondropdowncaption,.tlsectiondropdown .listboxfield {
+	font-size:16px
+}
+
+.tlsectiondropdown .listboxfield {
+	margin-right:15px
+}
+
+#BSG_Sections {
+	text-align:left
+}
+
+.linkbaritem {
+	border-left:none
+}
+
+.formsaveid {
+	font-size:19px;
+	font-weight:800;
+	margin-right:258px
+}
+
+.selfreglink a {
+	font-size:16px
+}
+
+
+/* 3. Error and information message boxes */
+.aj_formmessage {
+	outline:none
+}
+
+.aj_formmessage h2[title="Error message"].info,.aj_formmessage h2[title="Error message"].info2,.aj_formmessage h2[title="section error"].info,.aj_formmessage h2[title="section error"].info2 {
+	border:2px solid #df3034;
+	padding:1em;
+	border-color:#df3034
+}
+
+.tlform .custommsg {
+	padding: 15px;
+	border: 2px solid #BFC1C3;
+	background-color: #DEE0E2;
+}
+
+a.aerror, #Message {
+	color:#DF3034;
+	font-size:14px;
+	text-transform:none;
+	text-decoration:none
+}
+
+a.aerror:hover,#Message:hover,.info a:hover,.custommsg a:hover {
+	color:#DF3034;
+	text-decoration:underline!important
+}
+
+div.errormsgheader+p {
+	margin-top:14.25px;
+	margin-bottom:14.25px;
+}
+
+legend .aj_formmessage {
+	outline:none;
+	width:75%;
+	float:none;
+	margin-top:0;
+	padding-bottom:0;
+	position:relative;
+	top:-21px
+}
+
+/* 4. Inline errors, alerts and information */
+.fielderrortext strong {
+	color:#df3034;
+	font-size:14px;
+	line-height:1.25;
+	font-weight:300!important;
+	text-transform:none;
+	display:block;
+	padding-bottom:.5em
+}
+
+.fieldwidthmodifier_err {
+	padding-right:0
+}
+
+.fieldrow_err {
+	background-color:#fef7f7;
+	padding-left:9px;
+	border-left:3px solid #df3034;
+	margin-left:-9px
+}
+
+.tliconerror {
+	display:none
+}
+
+.alert-error {
+	color:#C20300;
+	padding:10px;
+	width:920px
+}
+
+.alert-info {
+	color:#10435C;
+	font-size:14px;
+	font-weight:500;
+	padding:10px;
+	width:920px
+}
+
+.alert-info p {
+	display:inline-block;
+	margin-top:4px
+}
+
+.alert p {
+	margin-bottom:0
+}
+
+.iconinfo {
+	background:url(info-iconx1.png) no-repeat;
+	width:30px;
+	height:30px;
+	display:inline-block;
+	margin-right:10px;
+	background-size:30px;
+	float:left
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),not all,not all,not all,not all,not all {
+	.iconinfo {
+		background:url(info-iconx2.png) no-repeat;
+		width:30px;
+		height:30px;
+		display:inline-block;
+		margin-right:10px;
+		background-size:30px;
+		float:left
+	}
+
+	.eulogo {
+		width:63px;
+		height:42px;
+		display:inline-block;
+		float:right;
+		background:url(eu_logo_x2.png)no-repeat;
+		margin-right:20px;
+		background-size:100%
+	}
+}
+
+/* 5. Help text */
+.standardcaption,.standardcaptionhelptext {
+	display:none
+}
+
+.help-block {
+	margin:8px 20px 5px 0;
+	color:#000!important;
+	display:block;
+	font-size:12px;
+	font-weight:400;
+	line-height:1.31579;
+	max-width:1000px
+}
+
+.standardcaptionhelptext .help-block,.standardcaptionhelptext .help-text {
+	margin-top:0;
+	font-size:16px;
+	line-height:1.25
+}
+
+.fieldrightcolumn .tliconhelp {
+	margin-top:2px;
+	margin-left:8px
+}
+
+.radiomergedcolumn .tliconhelp {
+	margin-top:-3px
+}
+
+.radioinputcolumn .tliconhelp {
+	margin-top:5px
+}
+
+summary::-webkit-details-marker {
+	display:none
+}
+
+summary:focus {
+	outline:none
+}
+
+details > * {
+	display:none
+}
+
+details > summary:before {
+	float:left;
+	width:15px;
+	content:'► ';
+	font-size:60%;
+	margin-top:4px
+}
+
+details.open > summary:before {
+	content:'▼ '
+}
+
+details.open>summary.guidance {
+	background-color:#ffbf47;
+	outline:3px solid #ffbf47
+}
+
+summary {
+	cursor:pointer;
+	font-size:19px;
+	line-height:1.31579;
+	font-weight:400;
+	text-transform:none;
+	color:#005ea5;
+	display:inline;
+	text-decoration:underline
+}
+
+summary:hover {
+	color:#2e8aca
+}
+
+.detailwrap {
+	border-left:solid 5px #bfc1c3;
+	padding:.99999em 0 .99999em .99999em;
+	margin-bottom:1em;
+	clear:both;
+	text-decoration:none;
+	color:#0b0c0c;
+	line-height:1.2em;
+	font-weight:400;
+	max-width:100%
+}
+
+input[type="submit"].attachfieldbuttonretrieve {
+	display:none
+}
+
+.opthelp {
+	float:left
+}
+
+.helpcaption {
+	font-weight:800;
+	margin-bottom:4px
+}
+
+.helpsummary {
+	margin-bottom:4px
+}
+
+div.help-text {
+	font-weight:400;
+	font-size:19px;
+	line-height:1em;
+	color:#656565
+}
+
+/* 6. Mandatory & optional fields */
+.tliconmandatory {
+	display:none
+}
+
+.tlform .tliconmandatory,.tlform .tliconnomandatory {
+	width:0;
+	height:0;
+	margin:0
+}
+
+.optional {
+	font-size:.9em;
+	color:#595959;
+	font-weight:400
+}
+
+
+/* 7. Buttons and links */
+.nonIE .linkedbuttoncontainer {
+	display:inline-block
+}
+
+.toolbarbuttons {
+	margin-left:0
+}
+
+.dlgbuttons {
+	text-align:left
+}
+
+.LogonDialog .toolbarbuttons {
+	margin-left:22%
+}
+
+.fieldwithlinkedbutton,.captionwithlinkedbutton {
+	margin-bottom:10px;
+	display:inline-block;
+	float:left
+}
+
+.attachfieldbuttons {
+	margin-left: -6px;
+}
+
+input[type="submit"]:focus {
+	outline:solid 2px #ffbf47
+}
+
+.tl_responsive .tltoolbar,.tltoolbar {
+	margin-bottom: 20px;
+}
+
+.KeyBasedStartDialog .aj_bottomtoolbar #BTB_BB_Cancel.button {
+	margin-left:0;
+	top:0;
+	margin-top:-50px
+}
+
+.formtableaddbuttonarea {
+	float:left
+}
+
+div.toolbarbuttons_bottom li.tlnoli {
+	display:inline
+}
+
+.button, .buttondisabled {
+	border:none;
+	padding:0.52632em 0.78947em 0.26316em 0.78947em;
+	-webkit-box-shadow:0 2px 0 #b5babe
+	-moz-box-shadow:0 2px 0 #b5babe;
+	box-shadow:0 2px 0 #b5babe
+}
+
+.tablerowbuttonscontainer .button {
+	margin: 4px 3px 5px 0px
+}
+
+.button:hover {
+	background-color: #BFC1C3;
+	color: inherit;
+}
+
+.button:focus {
+	outline: 2px solid #ffbf47;
+}
+
+.buttondisabled {
+	opacity: 0.5;
+}
+
+.aj_bottomtoolbar #BTB_BB_Next.buttondisabled,.aj_bottomtoolbar input[type=submit][disabled=disabled],.aj_bottomtoolbar .buttondisabled,.aj_bottomtoolbar [disabled].button, 
+.aj_toptoolbar #BB_Next.buttondisabled,.aj_toptoolbar input[type=submit][disabled=disabled],.aj_toptoolbar .buttondisabled,.aj_toptoolbar [disabled].button
+{
+	opacity:.5
+}
+
+.PDFOptions input[name="BB_YesBtn"],#OKButton.button,#BB_AddRowAndClose,#BTB_BB_OK,#BB_OK,#BTB_BB_Next,#BB_Next,.FormClose input[name="BB_Save"],.button[id$="__pca"],
+input[type="submit"]#BTB_BA_Backtosummary.button,#BA_Backtosummary.button .dlgbuttons .button,.dlgbuttons input[name="BB_OK"] {
+	background-color:#00823b;
+	border:none;
+	-webkit-box-shadow:0 2px 0 #003518;
+	-moz-box-shadow:0 2px 0 #003518;
+	box-shadow:0 2px 0 #003518;
+	text-decoration:none;
+	cursor:pointer;
+	color:#fefefe;
+}
+
+#BB_AddRowAndClose:hover,#BB_OK:hover,#BTB_BB_Next:hover,#BB_Next:hover,.FormClose input[name="BB_Save"]:hover,.button[id$="__pca"]:hover, 
+input[type="submit"]#BTB_BA_Backtosummary.button:hover,input[type="submit"]#BA_Backtosummary.button:hover {
+	background-color:#00692f;
+	color: #fefefe
+}
+
+div.aj_toptoolbar #BB_OK,div.aj_toptoolbar #BB_tlOld_OK {
+	margin-right:39px;
+	width:275px
+}
+
+.modalform #BTB_BB_Back {
+	float:none;
+	margin-top:65px
+}
+
+.modalform #BTB_BB_Next {
+	margin-top:-150px
+}
+
+.SystemErrorDialog div.aj_bottomtoolbar #BTB_BB_OK {
+	display:block
+}
+
+/* 8. Indented headings */
+fieldset[id$="__ind"] div[id$="__ind"] {
+	height:100%;
+	border-left:solid 5px #bfc1c3;
+	padding:0;
+	margin-bottom:1.2em
+}
+
+fieldset[id$="__ind"] div[id$="__ind"] h4 {
+	margin-top:0;
+	font-weight:400
+}
+
+div[id$="__ind"] .fieldmergedcolumn {
+	font-weight:400;
+	width:auto
+}
+
+/* 9. Dialogs */
+.CustomDialog .dialogouter {
+	width:35%
+}
+.dialog .content_corners_bottom {
+	display:none
+}
+
+.builtindialog .tlform h1 {
+	margin-left:0
+}
+
+.dlgmsg {
+	padding-bottom:26px
+}
+
+.dlgcontent .fieldinputcolumn {
+	width:55%
+}
+
+.dlgcontent {
+	padding-left:0
+}
+
+.dlgcontent .fieldcaptioncolumn {
+	width:44%
+}
+
+.CloseDialog #aj_formcontent legend,.KeyBasedStartDialog #aj_formcontent legend {
+	font-size:36px
+}
+
+.dlgcontent .fieldiconscolumn {
+	display:  none;
+}

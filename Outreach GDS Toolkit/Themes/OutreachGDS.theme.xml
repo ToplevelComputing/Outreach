@@ -1,0 +1,596 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<OutreachTheme>
+  <Version>1.0.1.0</Version>
+  <Presentation>
+    <LayoutType>Responsive</LayoutType>
+    <WidthIfFixed>1000px</WidthIfFixed>
+    <AlignmentIfFixed>center</AlignmentIfFixed>
+    <NarrowNumberFields>1</NarrowNumberFields>
+    <NamedMonths>0</NamedMonths>
+    <ExpandErrors>1</ExpandErrors>
+    <IncludeMandatoryExplanation>0</IncludeMandatoryExplanation>
+    <TableAddRowPosition>Bottom</TableAddRowPosition>
+    <ToolbarPosition>Bottom</ToolbarPosition>
+    <SectionButtonType>Tabs</SectionButtonType>
+    <FieldCaptionAlign>left</FieldCaptionAlign>
+    <IncludeSectionStatusIcons>0</IncludeSectionStatusIcons>
+    <ShowDialogsAboveForm>1</ShowDialogsAboveForm>
+    <ShowColumnDividers>0</ShowColumnDividers>
+    <ShowMyDetails>1</ShowMyDetails>
+  </Presentation>
+  <CssSettings>
+    <General>
+      <Background>
+        <Color>#ffffff</Color>
+      </Background>
+      <Font>
+        <Family>nta</Family>
+        <Size>24px</Size>
+        <Weight>normal</Weight>
+        <Style>normal</Style>
+        <Color>#000000</Color>
+      </Font>
+      <Buttons>
+        <Font>
+          <Family>[TL_Inherits]</Family>
+          <Size>19px</Size>
+          <Weight>normal</Weight>
+          <Style>[TL_Inherits]</Style>
+          <Color>#333333</Color>
+        </Font>
+        <Background>
+          <Color>#dee0e2</Color>
+        </Background>
+        <Border>
+          <Width></Width>
+          <Style></Style>
+          <Color></Color>
+          <BorderHorizontalRadius>0px</BorderHorizontalRadius>
+          <BorderVerticalRadius>0px</BorderVerticalRadius>
+        </Border>
+        <Padding>
+          <PaddingTop>0.52632em</PaddingTop>
+          <PaddingRight>0.78947em</PaddingRight>
+          <PaddingBottom>0.26316em</PaddingBottom>
+          <PaddingLeft>0.78947em</PaddingLeft>
+        </Padding>
+        <Margin>
+          <MarginTop></MarginTop>
+          <MarginRight></MarginRight>
+          <MarginBottom></MarginBottom>
+          <MarginLeft></MarginLeft>
+        </Margin>
+        <BoxShadow>
+          <BoxShadow>0 2px 0 #b5babe</BoxShadow>
+        </BoxShadow>
+      </Buttons>
+      <DisabledButtons>
+        <Font>
+          <Family>[TL_Inherits]</Family>
+          <Size>[TL_Inherits]</Size>
+          <Weight>[TL_Inherits]</Weight>
+          <Style>[TL_Inherits]</Style>
+          <Color></Color>
+        </Font>
+        <Background>
+          <Color>[TL_Inherits]</Color>
+        </Background>
+        <Border>
+          <Width>[TL_Inherits]</Width>
+          <Style>[TL_Inherits]</Style>
+          <Color>[TL_Inherits]</Color>
+          <BorderHorizontalRadius>[TL_Inherits]</BorderHorizontalRadius>
+          <BorderVerticalRadius>[TL_Inherits]</BorderVerticalRadius>
+        </Border>
+        <Padding>
+          <PaddingTop>[TL_Inherits]</PaddingTop>
+          <PaddingRight>[TL_Inherits]</PaddingRight>
+          <PaddingBottom>[TL_Inherits]</PaddingBottom>
+          <PaddingLeft>[TL_Inherits]</PaddingLeft>
+        </Padding>
+        <Margin>
+          <MarginTop>[TL_Inherits]</MarginTop>
+          <MarginRight>[TL_Inherits]</MarginRight>
+          <MarginBottom>[TL_Inherits]</MarginBottom>
+          <MarginLeft>[TL_Inherits]</MarginLeft>
+        </Margin>
+        <BoxShadow>
+          <BoxShadow>[TL_Inherits]</BoxShadow>
+        </BoxShadow>
+      </DisabledButtons>
+      <CustomIcons>
+        <FileName></FileName>
+        <SectionIconsFileName></SectionIconsFileName>
+        <IconsStandardOrCustom>Standard</IconsStandardOrCustom>
+        <SectionsStandardOrCustom>Standard</SectionsStandardOrCustom>
+        <Calendar>
+          <Height>24px</Height>
+          <Width>26px</Width>
+        </Calendar>
+        <SmallCalendar>
+          <Height>23px</Height>
+          <Width>18px</Width>
+        </SmallCalendar>
+        <Error>
+          <Height>18px</Height>
+          <Width>13px</Width>
+        </Error>
+        <SmallError>
+          <Height>18px</Height>
+          <Width>12px</Width>
+        </SmallError>
+        <Help>
+          <Height>18px</Height>
+          <Width>16px</Width>
+        </Help>
+        <SmallHelp>
+          <Height>18px</Height>
+          <Width>12px</Width>
+        </SmallHelp>
+        <TableInsert>
+          <Height>21px</Height>
+          <Width>22px</Width>
+        </TableInsert>
+        <TableEdit>
+          <Height>21px</Height>
+          <Width>20px</Width>
+        </TableEdit>
+        <TableDelete>
+          <Height>21px</Height>
+          <Width>17px</Width>
+        </TableDelete>
+        <SectionStatusPartial>
+          <Height>19px</Height>
+          <Width>20px</Width>
+        </SectionStatusPartial>
+        <SectionStatusComplete>
+          <Height>19px</Height>
+          <Width>20px</Width>
+        </SectionStatusComplete>
+        <Mandatory>
+          <Height>9px</Height>
+          <Width>7px</Width>
+        </Mandatory>
+      </CustomIcons>
+    </General>
+    <FormSection>
+      <Background>
+        <Color>#FFFFFF</Color>
+      </Background>
+      <Masthead>
+        <StandardMastheadOrFooter>
+          <Layout>LeftImage</Layout>
+          <BackgroundColor>#0b0c0c</BackgroundColor>
+          <Height>56px</Height>
+          <LeftImage>
+            <FileName>gov.uk_logotype_crown.png</FileName>
+            <Alt>Toplevel Outreach</Alt>
+            <PaddingTop>3px</PaddingTop>
+            <PaddingRight>8px</PaddingRight>
+            <PaddingBottom>0px</PaddingBottom>
+            <PaddingLeft>5px</PaddingLeft>
+          </LeftImage>
+          <RightImage>
+            <FileName></FileName>
+          </RightImage>
+          <StaticText>
+            <PaddingTop>12px</PaddingTop>
+            <PaddingLeft>0px</PaddingLeft>
+            <TextContent>GOV.UK</TextContent>
+            <Font>
+              <Family>nta</Family>
+              <Size>30px</Size>
+              <Weight>bold</Weight>
+              <Style>normal</Style>
+              <Color>#ffffff</Color>
+            </Font>
+          </StaticText>
+          <Margin>0px</Margin>
+          <BackgroundImage>
+            <FileName></FileName>
+          </BackgroundImage>
+          <IsFullWidth>0</IsFullWidth>
+        </StandardMastheadOrFooter>
+        <CustomMastheadOrFooter>
+          <HTMLContent>&lt;header&gt;
+ &lt;div class="navbar navbar-fixed-top"&gt;
+   &lt;div class="navbar-inner"&gt;
+     &lt;div class="container"&gt;
+                &lt;a href="https://www.gov.uk/" target="_blank" title="Go to the GOV.UK homepage" id="logo" class="content"&gt;
+                    &lt;img src="_static/gov.uk_logotype_crown.png" width="35" height="31" alt="Go to the GOV.UK homepage"&gt; GOV.UK
+                &lt;/a&gt;
+&lt;div class="home"&gt;&lt;a href="https://www.gov.uk/" target="_blank" id="proposition-name"&gt;%[Form.TitleNoMarkup]&lt;strong class="phase-tag-beta"&gt;BETA&lt;/strong&gt;&lt;/a&gt;&lt;/div&gt;      
+
+     &lt;/div&gt;
+   &lt;/div&gt;
+ &lt;/div&gt; &lt;div class="container"&gt;
+
+  &lt;div class="top-bar"&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+ &lt;div class="container"&gt;
+&lt;div class="sub-header"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+  &lt;div class="container"&gt;
+    &lt;p id="global-cookie-message" style="display:block;"&gt;*.gov.uk uses cookies to make the site simpler. &lt;a href="_static/cookie_use_hmpo.html" target="_blank"&gt;Find out more about cookies&lt;/a&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</HTMLContent>
+        </CustomMastheadOrFooter>
+      </Masthead>
+      <Footer>
+        <StandardMastheadOrFooter>
+          <Layout>NoImage</Layout>
+          <BackgroundColor>#DEE0E2</BackgroundColor>
+          <Height>0px</Height>
+          <LeftImage>
+            <FileName>gov.uk_logotype_crown.png</FileName>
+            <Alt>Test</Alt>
+            <PaddingTop>20px</PaddingTop>
+            <PaddingRight>8px</PaddingRight>
+            <PaddingBottom>0px</PaddingBottom>
+            <PaddingLeft>5px</PaddingLeft>
+          </LeftImage>
+          <RightImage>
+            <FileName></FileName>
+          </RightImage>
+          <StaticText>
+            <PaddingTop>0px</PaddingTop>
+            <PaddingLeft>0px</PaddingLeft>
+            <TextContent></TextContent>
+            <Font>
+              <Family>nta</Family>
+              <Size>19px</Size>
+              <Weight>bold</Weight>
+              <Style>normal</Style>
+              <Color>#000000</Color>
+            </Font>
+          </StaticText>
+          <Margin>0px</Margin>
+          <BackgroundImage>
+            <FileName></FileName>
+          </BackgroundImage>
+          <IsFullWidth>0</IsFullWidth>
+        </StandardMastheadOrFooter>
+        <CustomMastheadOrFooter>
+          <HTMLContent>&lt;div class="top-bar-footer"&gt;&lt;/div&gt;
+&lt;footer&gt;
+   &lt;div class="container"&gt;
+&lt;div class="row"&gt;
+&lt;div class="footer-meta"&gt;
+    &lt;div class="footer-meta-inner"&gt;
+&lt;div class="open-government-licence"&gt;
+              &lt;h2&gt;&lt;a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2" target="_blank"&gt;Open Government Licence&lt;/a&gt;&lt;/h2&gt;
+              &lt;p&gt;All content is available under the &lt;a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2" target="_blank"&gt;Open Government Licence v2.0&lt;/a&gt;, except where otherwise stated&lt;/p&gt;
+            &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="copyright"&gt;
+            &lt;a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm" target="_blank"&gt;© Crown copyright&lt;/a&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/footer&gt;
+&lt;script type="text/javascript"&gt;
+/* detect device */
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+document.getElementById("device").style.display = "block";
+}
+&lt;/script&gt;
+</HTMLContent>
+        </CustomMastheadOrFooter>
+      </Footer>
+      <Title>
+        <Font>
+          <Family>[TL_Inherits]</Family>
+          <Size>36px</Size>
+          <Weight>bold</Weight>
+          <Style>[TL_Inherits]</Style>
+          <Color>[TL_Inherits]</Color>
+        </Font>
+      </Title>
+      <Toolbars>
+        <SectionTitle>
+          <Font>
+            <Family>[TL_Inherits]</Family>
+            <Size>medium</Size>
+            <Weight>bold</Weight>
+            <Style>[TL_Inherits]</Style>
+            <Color>[TL_Inherits]</Color>
+          </Font>
+        </SectionTitle>
+        <Background>
+          <Color>#ffffff</Color>
+        </Background>
+        <Border>
+          <Width>1px</Width>
+          <Style>None</Style>
+          <Color>#ffffff</Color>
+          <BorderHorizontalRadius></BorderHorizontalRadius>
+          <BorderVerticalRadius></BorderVerticalRadius>
+        </Border>
+        <Buttons>
+          <Font>
+            <Family>[TL_Inherits]</Family>
+            <Size>[TL_Inherits]</Size>
+            <Weight>[TL_Inherits]</Weight>
+            <Style>[TL_Inherits]</Style>
+            <Color>#005ea5</Color>
+          </Font>
+          <Background>
+            <Color>#ffffff</Color>
+          </Background>
+          <Border>
+            <Width>[TL_Inherits]</Width>
+            <Style>[TL_Inherits]</Style>
+            <Color>[TL_Inherits]</Color>
+            <BorderHorizontalRadius>[TL_Inherits]</BorderHorizontalRadius>
+            <BorderVerticalRadius>[TL_Inherits]</BorderVerticalRadius>
+          </Border>
+          <Padding>
+            <PaddingTop>0px</PaddingTop>
+            <PaddingRight>0px</PaddingRight>
+            <PaddingBottom>0px</PaddingBottom>
+            <PaddingLeft>0px</PaddingLeft>
+          </Padding>
+          <Margin>
+            <MarginTop>[TL_Inherits]</MarginTop>
+            <MarginRight>14px</MarginRight>
+            <MarginBottom>15px</MarginBottom>
+            <MarginLeft>[TL_Inherits]</MarginLeft>
+          </Margin>
+          <BoxShadow>
+            <BoxShadow>none</BoxShadow>
+          </BoxShadow>
+        </Buttons>
+        <DisabledToolbarButtons>
+          <Font>
+            <Family>[TL_Inherits]</Family>
+            <Size>[TL_Inherits]</Size>
+            <Weight>[TL_Inherits]</Weight>
+            <Style>[TL_Inherits]</Style>
+            <Color>#005ea5</Color>
+          </Font>
+          <Background>
+            <Color>#ffffff</Color>
+          </Background>
+          <Border>
+            <Width>[TL_Inherits]</Width>
+            <Style>[TL_Inherits]</Style>
+            <Color>[TL_Inherits]</Color>
+            <BorderHorizontalRadius>[TL_Inherits]</BorderHorizontalRadius>
+            <BorderVerticalRadius>[TL_Inherits]</BorderVerticalRadius>
+          </Border>
+          <Padding>
+            <PaddingTop>0px</PaddingTop>
+            <PaddingRight>0px</PaddingRight>
+            <PaddingBottom>0px</PaddingBottom>
+            <PaddingLeft>0px</PaddingLeft>
+          </Padding>
+          <Margin>
+            <MarginTop>[TL_Inherits]</MarginTop>
+            <MarginRight>14px</MarginRight>
+            <MarginBottom>15px</MarginBottom>
+            <MarginLeft>[TL_Inherits]</MarginLeft>
+          </Margin>
+          <BoxShadow>
+            <BoxShadow>none</BoxShadow>
+          </BoxShadow>
+        </DisabledToolbarButtons>
+        <BackNextToolbarButtons>
+          <Hidden>false</Hidden>
+        </BackNextToolbarButtons>
+      </Toolbars>
+      <SectionMessages>
+        <Font>
+          <Family>[TL_Inherits]</Family>
+          <Size>16px</Size>
+          <Weight>normal</Weight>
+          <Style>[TL_Inherits]</Style>
+          <Color>#DF3034</Color>
+        </Font>
+        <Error>
+          <BackgroundColor>#fef7f7</BackgroundColor>
+          <BackgroundColorFlash>#fef7f7</BackgroundColorFlash>
+        </Error>
+      </SectionMessages>
+      <MandatoryExplanation>
+        <Font>
+          <Family>[TL_Inherits]</Family>
+          <Size>14px</Size>
+          <Weight>normal</Weight>
+          <Style>normal</Style>
+          <Color>#666666</Color>
+        </Font>
+      </MandatoryExplanation>
+      <SectionButtons>
+        <Font>
+          <Family>[TL_Inherits]</Family>
+          <Size>16px</Size>
+          <Weight>normal</Weight>
+          <Style>[TL_Inherits]</Style>
+          <Color>[TL_Inherits]</Color>
+        </Font>
+        <BackgroundStyle>flat</BackgroundStyle>
+        <TextAlign>center</TextAlign>
+      </SectionButtons>
+      <FormContent>
+        <GroupLegend>
+          <Font>
+            <Family>[TL_Inherits]</Family>
+            <Size>36px</Size>
+            <Weight>bold</Weight>
+            <Style>[TL_Inherits]</Style>
+            <Color>[TL_Inherits]</Color>
+          </Font>
+        </GroupLegend>
+        <GroupFieldset>
+          <Border>
+            <Width></Width>
+            <Style>None</Style>
+            <Color></Color>
+            <BorderHorizontalRadius></BorderHorizontalRadius>
+            <BorderVerticalRadius></BorderVerticalRadius>
+          </Border>
+        </GroupFieldset>
+        <FieldErrors>
+          <Color>#e00000</Color>
+        </FieldErrors>
+        <Tables>
+          <TableHead>
+            <Font>
+              <Family>[TL_Inherits]</Family>
+              <Size>16px</Size>
+              <Weight>bold</Weight>
+              <Style>[TL_Inherits]</Style>
+              <Color>#0b0c0c</Color>
+            </Font>
+            <Background>
+              <Color>#FFFFFF</Color>
+            </Background>
+          </TableHead>
+          <TableBody>
+            <Font>
+              <Family>[TL_Inherits]</Family>
+              <Size>16px</Size>
+              <Weight>normal</Weight>
+              <Style>normal</Style>
+              <Color>#0b0c0c</Color>
+            </Font>
+            <BackgroundColorEven>#FFFFFF</BackgroundColorEven>
+            <BackgroundColorOdd>#FFFFFF</BackgroundColorOdd>
+          </TableBody>
+        </Tables>
+        <Links>
+          <Color>#005ea5</Color>
+          <HoverColor>#2e8aca</HoverColor>
+        </Links>
+      </FormContent>
+    </FormSection>
+    <Dialogs>
+      <Masthead>
+        <StandardMastheadOrFooter>
+          <Layout>LeftImage</Layout>
+          <BackgroundColor>#0c0c0c</BackgroundColor>
+          <Height>56px</Height>
+          <LeftImage>
+            <FileName>gov.uk_logotype_crown.png</FileName>
+            <Alt>Home office logo</Alt>
+            <PaddingTop>15px</PaddingTop>
+            <PaddingRight>6px</PaddingRight>
+            <PaddingBottom>0px</PaddingBottom>
+            <PaddingLeft>10px</PaddingLeft>
+          </LeftImage>
+          <RightImage>
+            <FileName></FileName>
+          </RightImage>
+          <StaticText>
+            <PaddingTop>10px</PaddingTop>
+            <PaddingLeft>0px</PaddingLeft>
+            <TextContent>GOV.UK</TextContent>
+            <Font>
+              <Family>nta</Family>
+              <Size>30px</Size>
+              <Weight>bold</Weight>
+              <Style>normal</Style>
+              <Color>#FFFFFF</Color>
+            </Font>
+          </StaticText>
+          <Margin>0px</Margin>
+          <BackgroundImage>
+            <FileName></FileName>
+          </BackgroundImage>
+          <IsFullWidth>0</IsFullWidth>
+        </StandardMastheadOrFooter>
+        <CustomMastheadOrFooter>
+          <HTMLContent></HTMLContent>
+        </CustomMastheadOrFooter>
+      </Masthead>
+      <Background>
+        <Color>#ffffff</Color>
+      </Background>
+      <Lookup />
+    </Dialogs>
+  </CssSettings>
+  <StringTableFileName>OutreachGDSCustomStrings.htm</StringTableFileName>
+  <CustomJavaScript>
+    <GlobalScript>&lt;link rel="stylesheet" type="text/css" href="_static/GDS-sectionbuttons.css" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="_static/OutreachGDS.css" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="_static/accordion.css" /&gt;
+
+&lt;script type="text/javascript" src="_static/jquery-1.11.1.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="_static/jquery.details.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="_static/modernizr-2.5.2.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="_static/ofeucookie.js"&gt;&lt;/script&gt;
+&lt;!--[if lt IE 9]&gt;
+    &lt;script src="_static/html5shiv.js"&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+&lt;script type="text/javascript" src="_static/OutreachGDS.js"&gt;&lt;/script&gt;
+  
+
+</GlobalScript>
+    <OnLoadScript>&lt;script type="text/javascript"&gt;
+TLCustomOnLoad = function(args)
+{
+  checkCookieSeen();
+
+$("input.formtextfield_erra").change(function () {
+        TopErrorMessage();
+        
+    });
+
+    GDSDateChange();
+    SlideShow();
+    InitDetailsSummary();
+    Summary();
+    ReorderBottom();
+    GroupRadioButtons();
+    FixRadioFields();
+    StandardCaptionMicroHelp();
+    DisableProgressBar();
+
+    $("input[type='radio'], input[type='checkbox']").each(function() {
+         if ($(this).is(':checked')) { 
+            CheckedLabel($(this)); 
+        } else {
+            RemoveLabelChecked($(this));
+        }
+    });
+
+    $("input[type='radio']").change(function(){
+        $("input[type='radio'][name='" + $(this).attr('name') + "']").each(function() {
+            RemoveLabelChecked($(this));
+        });
+        CheckedLabel($(this));
+    });
+
+    $("input[type='checkbox']").change(function(){
+        if ($(this).is(':checked') ) { 
+            CheckedLabel($(this)); 
+        } else {
+            RemoveLabelChecked($(this));
+        }
+    });
+
+    //scrollToDialog("#tlTableInlineAddRowContent");
+    if ($("div.CloseDialog").is('*')) {
+        $('form[name="worldpay"]').hide();
+     }
+
+    if ($("#tlTableInlineAddRowContent").is('*')) {
+        document.location.href = "#tlTableInlineAddRowContent";
+        setTimeout(function () { window.scrollBy(0, -110); }, 10);
+    }
+    if ($("#BTB_BB_Next.buttondisabled").is('*')) {
+        $("#BTB_BB_OK").hide();
+    }
+    $(".PDFOptions input[name='BB_YesBtn']").click();
+    PdfDownload();
+}
+&lt;/script&gt;</OnLoadScript>
+  </CustomJavaScript>
+</OutreachTheme>
