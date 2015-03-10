@@ -799,7 +799,6 @@ document.getElementById("device").style.display = "block";
   <CustomJavaScript>
     <GlobalScript>&lt;link rel="stylesheet" type="text/css" href="_static/GDS-sectionbuttons.css" /&gt;
 &lt;link rel="stylesheet" type="text/css" href="_static/OutreachGDS.css" /&gt;
-&lt;link rel="stylesheet" type="text/css" href="_static/IPS.css" /&gt;
 &lt;link rel="stylesheet" type="text/css" href="_static/accordion.css" /&gt;
 
 &lt;script type="text/javascript" src="_static/jquery-1.11.1.min.js"&gt;&lt;/script&gt;
@@ -810,7 +809,6 @@ document.getElementById("device").style.display = "block";
     &lt;script src="_static/html5shiv.js"&gt;&lt;/script&gt;
 &lt;![endif]--&gt;
 &lt;script type="text/javascript" src="_static/OutreachGDS.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="_static/IPS.js"&gt;&lt;/script&gt;
   
 
 </GlobalScript>
@@ -832,12 +830,6 @@ TLCustomOnLoad = function(args)
     GroupRadioButtons();
     FixRadioFields();
     StandardCaptionMicroHelp();
-    adjustAvailableAdults();
-    adjustAvailableChildren();
-    ReorderSummaryButtons();
-
-    $("input[type='radio'][name='F_Adult_count']").change(adjustAvailableChildren);
-    $("input[type='radio'][name='F_Child_count']").change(adjustAvailableAdults);
 
     $("input[type='radio'], input[type='checkbox']").each(function() {
          if ($(this).is(':checked')) { 
@@ -884,16 +876,11 @@ TLCustomOnLoad = function(args)
     PdfDownload();
     OlderBrowserFunc();
 
-    // IPS-Specific code
-    DisableContinue();
-    %[If Summary &lt;&gt; ""]%[Summary]%[EndIf]%/
-    SelectDay();
-    SelectTime();
-    %[If ChangeCancelButtonText &lt;&gt; ""]$('#BTB_BB_Cancel').val("%[ChangeCancelButtonText]");$('#BTB_BB_Cancel').prop("title","%[ChangeCancelButtonText] (accesskey = c)");%[EndIf]%/
-
-%[if ReqFieldNames &lt;&gt; ""]%/
-%[ReqFieldNames]%/
-%[endif]%/
+	%[If Summary &lt;&gt; ""]%[Summary]%[EndIf]%/
+	
+	%[if ReqFieldNames &lt;&gt; ""]%/
+	%[ReqFieldNames]%/
+	%[endif]%/
 }
 &lt;/script&gt;</OnLoadScript>
   </CustomJavaScript>
