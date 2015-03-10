@@ -1,34 +1,89 @@
 ﻿// Collates page errors into an ordered list within the section's error message box
 function TopErrorMessage() {
-	if($("h2.info").children(".errormsgheader").length === 0) {
-		$("h2.info").prepend("<div class='errormsgheader'>There is a problem with this section</div><p>Please fix the following:</p>");
+    var haslist = true;
+
+    if ($("div.fielderrortext>strong").is('*')) {
+        haslist = true;
+    }
+    else {
+        haslist = false;
+    }
+    var showMoreClosingCode = "";
+    var errorHTML = "";
+	if($("h2.info").children(".errormsgheader").length === 0 && $("h2.info a").children(".errormsgheader").length === 0) {
+		$("h2.info a").prepend("<span class='errormsgheader'>There is a problem with this section</span><span class='errormsgsubheader'>Please fix the following:</span>");
 	}
 	$("h2.info #Message").addClass('aerror');
-    $("div.fielderrortext>strong").each(
+    $("#aj_bodydiv div.fielderrortext>strong, #tldialogouter div.fielderrortext>strong").each(
         function (i) {
 			if (i == 0) {
-                $("h2.info").html("<div class='errormsgheader'>There is a problem with this section</div><p>Please fix the following:</p>");
+                $("h2.info").html("<span class='errormsgheader'>There is a problem with this section</span><span class='errormsgsubheader'>Please fix the following:</span>");
+            }
+			var inlineErrorText = $(this).html();
+			if (inlineErrorText.indexOf("This is a required field and must be completed.") != -1) {
+                var curName = $(this).closest("div.fielderrortext").attr("id").replace("err_", "").replace(":", "\\:").replace("'", "\\'");
+
+				if (typeof (reqFieldNames[curName]) !== "undefined" && reqFieldNames[curName] !== "" && reqFieldNames[curName] != null) {
+					inlineErrorText = inlineErrorText.replace("This is a required field and must be completed.", "You must complete the '" + reqFieldNames[curName] + "' field.");
+					$(this).html(inlineErrorText);
+				}
             }
 		
+			if (i == 4) {
+                errorHTML += "<div class=\"hiddenerrors\">";
+                showMoreClosingCode = "</div><div style=\"text-align:right\"><button type=\"button\" id=\"showmorebutton__link\" class=\"morelink\" onclick=\"ToggleExtraErrors();\">More</button></div>";
+            }
+			
             if ($(this).find("span").length === 0) {
-                $("h2.info").html($("h2.info").html() + "<a href='#aerror" + (i + 1) + "' id='message" + (i + 1) + "' name='message" + (i + 1) + "' class='aerror'>" + (i + 1) + ". " + $(this).html() + "</a><br/>");
                 $(this).html("<span id='aerror" + (i + 1) + "'>" + (i + 1) + ". " + $(this).html() + '</span>');
             }
-            else {
+			
+			if (i > 4) {
+				errorHTML += "<a href='#aerror" + (i + 1) + "' id='message" + (i + 1) + "' name='message" + (i + 1) + "' class='aerror'>" + $(this).html() + "</a><br/>";
+			} else {
                 $("h2.info").html($("h2.info").html() + "<a href='#aerror" + (i + 1) + "' id='message" + (i + 1) + "' name='message" + (i + 1) + "' class='aerror'>" +  $(this).html() + "</a><br/>");
-            }
+			}
         });
-	$("div.fieldinputcolumn, div.radioinputcolumn, div.fieldmergedcolumn").each(function () {
-		if($(this).find(".fielderrortext").length != 0 && !$(this).parents(".fieldrow_err").length) $(this).parent().addClass("fieldrow_err");
-	});
+	if (haslist === true) {
+        $("h2.info").append(errorHTML + showMoreClosingCode);
+        $("div.fieldinputcolumn, div.radioinputcolumn, div.fieldmergedcolumn").each(function () {
+            if ($(this).find(".fielderrortext").length != 0 && !$(this).parents(".fieldrow_err").length) $(this).parent().addClass("fieldrow_err");
+        });
+    }
+}
+
+function ToggleExtraErrors() {
+    if ($("#showmorebutton__link").html() == "More") {
+        $(".hiddenerrors").show();
+        $("#showmorebutton__link").html("Less");
+    } else {
+        $(".hiddenerrors").hide();
+        $("#showmorebutton__link").html("More");
+    }
 }
 
 // Navigates to the top of the page when the error message box is displayed
-function ScrollToTopIfSectionErrorShowing() { var oErrorDiv = GetErrorDiv(); if (oErrorDiv) { TopErrorMessage(); var content = oErrorDiv.innerHTML; if (content != '') { if (content.length > 40 && content.substr(0, 40).toLowerCase() == '<p class=\'fields mandatoryfieldmessage\'>') { } else { var bTableInlineAddRow = IsInsideTableInlineRowAddContent(oErrorDiv); if (bTableInlineAddRow) { SetFocusOnSectionError(oErrorDiv) } else { scrollTo(0, 0) } m_nErrorSwitchCounter = 0; setTimeout('ToggleInfoClass();', 150); if (m_bAjaxMode && !bTableInlineAddRow) { SetFocusOnSectionErrorForJAWSAfterDelay() } } } } }; 
+function ScrollToTopIfSectionErrorShowing() { 
+	var oErrorDiv = GetErrorDiv(); 
+	if (oErrorDiv) { 
+		TopErrorMessage(); 
+		var content = oErrorDiv.innerHTML; 
+		if (content != '') { 
+			if (content.length > 40 && content.substr(0, 40).toLowerCase() == '<p class=\'fields mandatoryfieldmessage\'>') { 
+			} else { 
+				if ($("#tldialogouter").find(oErrorDiv).length === 0) {
+					scrollTo(0, 0);
+				} else { 
+					scrollTo(0, $("#tldialogouter #aj_formmessage").position().top);
+				}
+			}
+		}
+	}
+}
 
 // Inserts the Day, Month, Year labels above the date field
 function GDSDateChange() {
-    $(".datefielddata").find("label").remove();
+    $(".datefielddata").find("> label").remove();
     $(".datefielddata").find("select, input").each(function (index, elem) {
 		if(!$(elem).parent('.hodate').length) {
 			var label;
@@ -49,7 +104,12 @@ function GDSDateChange() {
 			var currentName = elem.name;
 			var currentValue = elem.value;
 			var currentOnChange = elem.attributes["onchange"].value;
-			var inputbox = $('<div class="hodate"><label for="' + elem.name + '">' + label + '</label><input type="text" name="' + elem.name + '" id="' + elem.id + '" onchange="setTimeout(' + currentOnChange + ', 500);" class="' + elem.className + '" maxlength="' + len + '" size="' + len + '"></div>');
+			var inputbox;
+			if (currentName.substring(0,3) == "FD_") {
+				inputbox = $('<div class="hodate"><span>' + label + '</span><input type="text" name="' + elem.name + '" id="' + elem.id + '" onchange="setTimeout(function() {' + currentOnChange + '}, 500);" class="' + elem.className + '" maxlength="' + len + '" size="' + len + '"></div>'); 
+			} else { 
+				inputbox = $('<div class="hodate"><label for="' + elem.name + '">' + label + '</label><input type="text" name="' + elem.name + '" id="' + elem.id + '" onchange="setTimeout(function() {' + currentOnChange + '}, 500);" class="' + elem.className + '" maxlength="' + len + '" size="' + len + '"></div>'); 
+			}
 			$(elem).replaceWith(inputbox);
 			$("#" + currentId).val(currentValue);
 		}
@@ -117,24 +177,29 @@ function SlideShow()
 
 // Initialises any custom expandable help items (drop, guidance, help)
 function InitDetailsSummary() {
-    $('html').addClass(/*$.fn.details.support ? */'details'/* : 'no-details'*/);
+    $('html').addClass('detailscompatible');
 
-	 $('html.details summary').each(function () {
-		if(!$(this).next('.detailwrap').length) {
-			$(this).nextAll().wrapAll('<div class="detailwrap"></div>');
+	$('html.detailscompatible .summary, html.detailscompatible .helpsummary').each(function () {
+		if(!$(this).next('br').next('.detailwrap').length) {
+			$(this).next('br').nextAll().wrapAll('<span class="detailwrap"></span>');
 			$(this).click(function (e) {
-				//if($.fn.details.support) {
-					e.preventDefault();
-
-					$(this).siblings('div.detailwrap').slideToggle("fast", function () {
-						$(this).parent('details').toggleClass('open');
+				e.preventDefault();
+				$(this).siblings('span.detailwrap').slideToggle("fast", function () {
+					$(this).parent('.details').toggleClass('open');
+				});
+			});
+			$(this).keyup(function (e) {
+				e.preventDefault();
+				if (event.keyCode == '32') {
+					$(this).next('br').siblings('span.detailwrap').slideToggle("fast", function () {
+						$(this).parent('.details').toggleClass('open');
 					});
-				//}
+				}
 			});
 		}
     });
 	
-	$('html.details details').attr('open', '').find('.detailwrap').css('display', 'none');
+	$('html.detailscompatible .details').find('.detailwrap').css('display', 'none');
 } 
 
 // Scrolls to a dialog box on the page if necessary.
@@ -160,13 +225,18 @@ function Summary() {
 function ReorderBottom() {
     var exit = $('#BTB_BB_Exit').parent();
     $('#BTB_BB_Exit').parent().remove();
-    $('.toolbarbuttons .aj_bottomtoolbar ul').append(exit)
+    $('.toolbarbuttons .aj_bottomtoolbar ul').append(exit);
 
-    var back = $('#BTB_BB_Back').parent();
-    $(back).css("display", "block");
+   var back = $('#BTB_BB_Back').parent();
+    $(back).addClass("newlinebutton");
     $('#BTB_BB_Back').parent().remove();
-    $('.toolbarbuttons .aj_bottomtoolbar ul').append(back)
+    $('.toolbarbuttons .aj_bottomtoolbar ul').append(back);
+	
+	var next = $('#BTB_BB_Next').parent();
+	$('#BTB_BB_Next').parent().remove();
+	$('.toolbarbuttons .aj_bottomtoolbar ul').prepend(next);
 }
+
 
 // Moves radio button inside it's label for correct styling.
 // Also assigns a class to horizontal radio groups, allowing targeted css selection.

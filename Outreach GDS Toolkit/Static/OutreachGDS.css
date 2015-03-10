@@ -55,46 +55,79 @@
 }
 
 /* 2. Global page & text styling */
+.screenreader {
+	position:absolute;
+	left:-9999px
+}
+
+.content_corners_top {
+	display:none
+}
+
 fieldset.headingenabled legend {
 	border:none;
-	margin-bottom:20px;
 	padding-left:0;
-	max-width:100%
+	max-width:100%;
+	padding-top:30px
+}
+
+.IE6or7 .radiogroup legend{
+	display:block;
+	padding:0px;
+	height:0px;
+}
+
+.IE6or7 .radiogroup_horizontal legend,.IE6or7 .radiogroup legend span.help{
+	display:none
+}
+
+.IE6or7 legend.empty {
+	height:0px
 }
 
 .formtitle {
 	width:700px;
 	display:none
 }
-.tlform h1 {
+
+.tlform h1,.tlform h2,.tlform h3,.tlform h4,span.bodytext,.labelsmall,.importanttext {
+	font-family:'nta', Arial, sans-serif;
+	margin:0;
+	padding:0
+}
+
+.tlform h1,.headinglarge {
 	font-size:36px;
-	font-family:'nta',Arial,sans-serif
+	line-height:1.2em;
 }
 
-.tlform h3 {
-	margin-left:0;
+.tlform h2,.tlform legend {
 	font-size:24px;
-	width:100%
+	line-height:1.2em
 }
 
-.tlform .heading h3 {
-	margin-left:0
+.tlform h3,.bodytext,.labelsmall,.importanttext {
+	font-size:19px;
+	line-height: 1.31579;
 }
 
-.heading h2 {
-	text-align:left;
-	font-size:20px;
-	margin-bottom:10px
-}
-
-.heading h3 {
-	text-align:left;
-	font-size:14px;
-	font-weight:100
+.tlform h4 {
+	font-size:16px;
+	line-height:1.25;
 }
 
 .tlform fieldset,.tltoolbar,.nonIE .partcontent .w4,.tlheadercontent,.fieldrow {
 	padding:0
+}
+
+.bodytext {
+	font-weight:normal
+}
+
+.fieldmergedcolumn .importanttext {
+	padding-left:50px;
+	font-weight:700;
+	margin-bottom:0;
 }
 
 p {
@@ -135,8 +168,8 @@ div.aj_formcontent {
 	display:block
 }
 
-.fieldwidthmodifier,.fieldwidthmodifierdate.formtableaddbuttonhint,.linkbaritem a,div.hodate label,#FO_Tob,.fieldinputcolumn,.helpcontainer {
-	font-size: 19px;
+.fieldwidthmodifier,.fieldwidthmodifierdate.formtableaddbuttonhint,.linkbaritem a,div.hodate label,div.hodate span,#FO_Tob,.fieldinputcolumn,.helpcontainer {
+	font-size: 16px;
 }
 
 /* 3. Header - gov.uk logo, form title & beta symbol */
@@ -180,14 +213,13 @@ div.aj_formcontent {
 	position:relative;
 	right:0;
 	left:0;
-	z-index:1030;
 	margin-bottom:0;
 	min-height:55px;
 	background:#0b0c0c;
 	overflow:hidden
 }
 
-header #logo {
+.headerdiv #logo {
 	position:relative;
 	top:0;
 	height:30px;
@@ -196,23 +228,22 @@ header #logo {
 	color:#fff!important;
 	font-weight:700;
 	font-size:30px;
-	line-height:1em;
+	line-height:1.15em;
 	text-decoration:none;
 	text-rendering:optimizeLegibility;
-	padding-bottom:1px;
 	margin:6px 0 -1px 20px;
 	width:161px;
 	float:left;
 	white-space:nowrap
 }
 
-header #logo:focus,header #logo:hover {
+.headerdiv #logo:focus,.headerdiv #logo:hover {
 	text-decoration:none;
 	border-bottom:1px solid;
 	padding-bottom:0
 }
 
-header #logo img {
+.headerdiv #logo img {
 	position:relative;
 	top:0;
 	width:35px;
@@ -242,14 +273,31 @@ div.home {
 	margin-top:5px
 }
 
-.phase-tag-beta {
+.phase-banner {
+	margin: 0 20px;
+	border-bottom: 1px solid #bfc1c3;
+	padding: 10px 0
+}
+
+.phase-banner p {
+	margin:0;
+	line-height:0
+}
+
+.phase-banner span {
+	font-size: 16px;
+	vertical-align: baseline;
+	display: inline-block
+}
+
+.phase-banner .phase-tag {
 	background-color:#f47738;
 	color:#fff;
 	font-size:18px;
 	font-weight:700!important;
 	display:inline-block;
-	vertical-align:top;
-	margin:3px 8px 0;
+	vertical-align:baseline;
+	margin:0;
 	padding:2px 5px 0;
 	font-size:16px;
 	line-height:1.25;
@@ -259,19 +307,23 @@ div.home {
 
 #global-cookie-message {
 	clear:both;
-	background-color:#d5e8f3;
-	padding:10px 15px;
-	margin:0 20px;
-	text-align:center
+	background-color:#d5e8f3
+}
+
+#global-cookie-message p {
+	margin: 0;
+	text-align: left;
+	padding: 10px 20px;
+	font-size:16px
 }
 
 /* 4. Footer - open government license notice & crown copyright logo */
-footer {
+.footerdiv {
 	background-color:#dee0e2!important;
 	border-top:1px solid #a1acb2
 }
 
-footer .container {
+.footerdiv .container {
 	padding:0 1em 60px;
 	overflow:auto
 }
@@ -297,11 +349,12 @@ footer .container {
 	line-height:1.25;
 	display:inline-block;
 	width:25%;
-	padding-top:15px
+	padding-top:15px;
+	text-align:right
 }
 
-footer .footer-meta .copyright a {
-	display:block;
+.footerdiv .footer-meta .copyright a {
+	display:inline-block;
 	padding:115px 0 0;
 	background:transparent url(../_static/govuk-crest.png) no-repeat 100% 0;
 	text-align:right;
@@ -327,11 +380,11 @@ footer .footer-meta .copyright a {
 	padding-top: 0.1em;
 }
 
-.open-government-licence h2 {
+.open-government-licence span {
 	margin-bottom: 1em;
 }
 
-.open-government-licence h2 a {
+.open-government-licence span a {
 	display:block;
 	width:41px;
 	height:17px;
@@ -376,7 +429,19 @@ footer .footer-meta .copyright a {
 }
 
 a[title^="Accessibility"] {
-	display:none
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden
+}
+
+a[title^="Accessibility"]:focus {
+	position: static;
+	width: auto;
+	height: auto;
+	background-color: white
 }
 
 .linkbaritem {
@@ -393,9 +458,15 @@ a[title^="Accessibility"] {
 	font-size:16px
 }
 
+.stepindicator {
+	font-size:24px;
+	line-height:1.25em;
+	color:#bfc1c3
+}
+
 /* 7. General field & caption CSS */
 .fieldwrapper {
-	margin-bottom:20px
+	margin-top:20px
 }
 
 .fieldmergedcolumn {
@@ -413,6 +484,10 @@ a[title^="Accessibility"] {
 
 .fieldmergedcolumn p {
 	margin-bottom:20px
+}
+
+.fieldmergedcolumn label {
+	font-weight:bold
 }
 
 .formtextarea_err,.formtextfield_err,.formpasswordfield_err,.narrowformtextfield_err,.tlform .radiogroup_err,.checkboxfield_err,.hourfield_err,.minutefield_err,.yearfield_err {
@@ -434,13 +509,14 @@ a[title^="Accessibility"] {
 }
 
 label,.fieldcaptioncheckbox,.fieldcaptioncolumn_alignright label,.fieldcaptionradio,.fieldmergedcolumn,.top_caption,.fieldcaptionlistbox,.fieldinputcolumn ul li,.fieldcaptioncolumn,div.aj_table>fieldset>legend {
-	line-height:1.25em
+	line-height:1.7em
 }
 
 .captionitem {
 	width:100%;
+	max-width:720px;
 	font-weight:normal;
-	font-size:19px
+	margin-top:20px
 }
 
 .fieldcaptionlistbox {
@@ -466,7 +542,20 @@ legend.empty {
 	border:none
 }
 
+.tlform .secheadertitle {
+	font-size:36px
+}
+
+.IE6or7 .fieldwidthmodifier {
+	padding-right:10px
+}
+
 /* 8. Text & memo fields */
+/* Hides IE10 'clear field' cross. Only an issue on IE10 on windows 7 & 8 */
+input::-ms-clear {
+	display:none
+}
+
 input.formtextfield_err {
 	border:solid 1px #e00000
 }
@@ -497,7 +586,14 @@ select,input[type=text],input[type=email],input[type=number],input[type=tel],inp
 	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
 	box-sizing:border-box;
-	margin-bottom:10px
+	margin-bottom:10px;
+	font-size:19px
+}
+
+select:disabled, input[type=text]:disabled, input[type=email]:disabled, input[type=number]:disabled, input[type=tel]:disabled, input[type=search]:disabled,
+input[type=url]:disabled, input[type=tel]:disabled, input[type=password]:disabled, textarea:disabled {
+	background-color:#ebebeb;
+	color:#545454
 }
 
 select,input[type=text],input[type=email],input[type=number],input[type=tel],input[type=search],input[type=url],input[type=tel],input[type=password] {
@@ -511,6 +607,14 @@ div.KeyBasedStartDialog div.fieldinputcolumn {
 	width:60%
 }
 
+input[id$="__sm"] {
+	width:120px
+}
+
+.accessiblefieldinfo {
+	left: -9999px
+}
+
 /* 9. Drop down / list boxes */
 .nonIE .fieldwidthmodifierlist,.IE8 .fieldwidthmodifierlist,.IE9 .fieldwidthmodifierlist {
 	width:55%
@@ -518,7 +622,8 @@ div.KeyBasedStartDialog div.fieldinputcolumn {
 
 .listboxfield {
 	max-width:99%;
-	width:auto
+	width:auto;
+	font-size:19px
 }
 
 /* 10. Radio buttons and checkboxes */
@@ -534,13 +639,17 @@ div.KeyBasedStartDialog div.fieldinputcolumn {
 	top:0;
 	display:block;
 	float:none;
-	margin:3px 10px 10px 3px;
-	padding:18px 30px 15px 45px;
+	margin:3px 10px 5px 3px;
+	padding:18px 30px 15px 50px;
 	background-color:#dee0e2;
 	position:relative;
 	border:1px solid #FFFCFC;
 	font-weight:400;
 	font-size:19px
+}
+
+.IE6or7 .radiogroup label:hover,.IE6or7 .checkboxfield label:hover,.IE6or7 .radiogroup_err label:hover,.IE6or7 .checkboxfield_err label:hover {
+	position:static
 }
 
 .fieldcaptioncheckbox {
@@ -555,6 +664,10 @@ div.KeyBasedStartDialog div.fieldinputcolumn {
 
 .radiogroup_horizontal label {
 	float:left
+}
+
+.radiogroup input:focus {
+	outline:none
 }
 
 .radiogroup input[id$="_apptype"] + label {
@@ -579,15 +692,15 @@ label.focused {
 
 label.checked {
 	border:1px solid #555;
-	background-color:rgba(255,255,255,0)
+	background-color:#ffffff
 }
 
 input[type="radio"],input[type="checkbox"] {
-	margin:3px 0 0 -24px;
+	margin:8px 0 0 -24px;
 	background:#fff;
 	position:absolute;
 	z-index:1;
-	background-color:#dee0e2;
+	background-color:transparent;
 	float:left
 }
 
@@ -669,18 +782,40 @@ a.aerror:hover {
 	color:inherit
 }
 
-div.errormsgheader {
+.hiddenerrors {
+	display:none
+}
+
+.morelink {
+	font-size: 16px;
+	color: #005ea5;
+	background-color:transparent;
+	border:none;
+	padding:0
+}
+
+.morelink:hover {
+	color:#2e8aca;
+	text-decoration:underline
+}
+
+.morelink:focus {
+	outline:3px solid #ffbf47
+}
+
+span.errormsgheader {
 	color:#0B0C0C;
 	font-size:24px;
 	font-weight:700
 }
 
-div.errormsgheader+p {
+span.errormsgsubheader {
 	color:#0B0C0C;
 	font-size:19px;
 	margin-top:14.25px;
 	margin-bottom:14.25px;
-	font-weight:700
+	font-weight:700;
+	display:block
 }
 
 legend .aj_formmessage {
@@ -694,6 +829,10 @@ legend .aj_formmessage {
 }
 
 /* 12. Inline errors, alerts and information */
+.reqfieldname {
+	display:none
+}
+
 .fielderrortext strong {
 	color:#df3034;
 	font-size:16px;
@@ -802,9 +941,22 @@ legend .aj_formmessage {
 	max-width:1000px
 }
 
+.indented {
+	border-left:solid 10px #bfc1c3;
+	padding:19px 0 19px 19px;
+	margin-bottom:1em;
+	clear:both;
+	text-decoration:none;
+	color:#0b0c0c;
+	font-weight:normal;
+	font-size:16px;
+	line-height:22px;
+	max-width:100%
+}
+
 .standardcaptionhelptext .help-block,.standardcaptionhelptext .help-text {
 	margin-top:0;
-	font-size:16px;
+	font-size:14px;
 	line-height:1.25
 }
 
@@ -821,63 +973,72 @@ legend .aj_formmessage {
 	margin-top:5px
 }
 
-summary::-webkit-details-marker {
+.summary::-webkit-.details-marker {
 	display:none
 }
 
-summary:focus {
-	outline:none
+.summary:focus {
+	outline:solid 3px #ffbf47
 }
 
-details > * {
+.details {
+	display:inline-block
+}
+
+.details > span {
 	display:none
 }
 
-details > summary:before {
-	float:left;
+.details:before {
 	width:15px;
 	content:'► ';
-	font-size:60%;
-	margin-top:4px
+	font-size:12px;
+	color:#005ea5;
+	vertical-align:3px
 }
 
-details.open > summary:before {
+.details.open:before {
 	content:'▼ '
 }
 
-details.open>summary.guidance {
+.details.open>.summary.guidance {
 	background-color:#ffbf47;
 	outline:3px solid #ffbf47
 }
 
-summary {
+.detailwrap.open {
+	display:block
+}
+
+.summary {
 	cursor:pointer;
+	font-family:'nta', Arial, sans-serif;
 	font-size:19px;
 	line-height:1.31579;
 	font-weight:400;
 	text-transform:none;
 	color:#005ea5;
 	display:inline;
-	text-decoration:underline
+	text-decoration:underline;
+	background-color:transparent;
+	border:none
 }
 
-summary:hover {
+.summary:hover {
 	color:#2e8aca
 }
 
 .detailwrap {
 	border-left:solid 10px #bfc1c3;
-	padding:.99999em 0 .99999em .99999em;
+	padding:19px 0 19px 19px;
 	margin-bottom:1em;
 	clear:both;
 	text-decoration:none;
 	color:#0b0c0c;
-	line-height:1.2em;
-	font-weight:400;
-	max-width:100%
-}
-
-input[type="submit"].attachfieldbuttonretrieve {
+	font-weight:normal;
+	font-size:19px;
+	line-height:22px;
+	max-width:100%;
 	display:none
 }
 
@@ -894,7 +1055,7 @@ input[type="submit"].attachfieldbuttonretrieve {
 	margin-bottom:4px
 }
 
-div.help-text {
+span.help-text {
 	font-weight:400;
 	font-size:19px;
 	line-height:1em;
@@ -919,13 +1080,19 @@ div.help-text {
 }
 
 /* 15. Tables */
-table.tltable {
-	border:none!important
+.aj_table {
+	margin-top:20px
 }
 
-table.tltable {
+table.tltable,.tl_responsivetable table.tltable {
+	border:2px solid transparent;
 	border-collapse:collapse;
 	border-spacing:0
+}
+
+.aj_table span[id^="BINFO_"] a {
+	float:left;
+	height:1px
 }
 
 table.tltable thead {
@@ -984,10 +1151,6 @@ table.tltable tbody tr {
 	text-align:right
 }
 
-.tableouter {
-	margin-bottom:80px
-}
-
 .formsectionbody table.tltable th,.formsectionbody table.tltable td {
 	border-left:none!important;
 	border-right:none!important;
@@ -996,13 +1159,22 @@ table.tltable tbody tr {
 	border-bottom:none!important
 }
 
+/* IE6 and 7 cannot set borders on table rows, so we do it on cells instead */
+.formsectionbody .IE6or7 table.tltable th,.formsectionbody .IE6or7 table.tltable td {
+	border-bottom:1px solid #ddd!important
+}
+
 .responsivetableblanktext {
 	font-size:16px;
 	margin:10px 0 5px 4px
 }
 
 /* 16. Buttons and links */
-.nonIE .linkedbuttoncontainer {
+a:focus {
+	outline:3px solid #ffbf47
+}
+
+.nonIE .linkedbuttoncontainer,.IE10 .linkedbuttoncontainer,.IE9 .linkedbuttoncontainer,.IE8 .linkedbuttoncontainer {
 	display:inline-block
 }
 
@@ -1018,12 +1190,6 @@ table.tltable tbody tr {
 	margin-left:22%
 }
 
-.fieldwithlinkedbutton,.captionwithlinkedbutton {
-	margin-bottom:10px;
-	display:inline-block;
-	float:left
-}
-
 .attachfieldbuttons {
 	margin-left: -6px;
 }
@@ -1037,7 +1203,7 @@ input[type="submit"]:focus {
 }
 
 .tl_responsive .tltoolbar,.tltoolbar {
-	margin-bottom: 30px;
+	margin-bottom:5px
 }
 
 .toolbarbuttons.toolbarbuttons_bottom {
@@ -1075,17 +1241,14 @@ div.toolbarbuttons_bottom li.tlnoli {
 	opacity: 0.5;
 }
 
-.toolbarbuttons_bottom .button,.popuptoolbar .button,.tltoolbar .button,.tltoolbar .buttondisabled,.dlgbuttons input[value=Cancel],.dlgbuttons input[name="BB_NoBtn"] {
-	text-decoration:underline
-}
-
-#aj_bodydiv #BB_NoBtn.button,#aj_bodydiv #BB_Cancel.button,.dlgbuttons input[value=Cancel],.dlgbuttons input[name="BB_NoBtn"],#BTB_BB_Cancel {
+input.button[id$='__link'], #BTB_BB_Back, #BTB_BB_Close, #BTB_BB_Cancel, #BTB_BB_Exit, #BB_Cancel, #ajOldId_BTB_BB_Back, #ajOldId_BTB_BB_Close, #ajOldId_BTB_BB_Cancel, #ajOldId_BTB_BB_Exit, #ajOldId_BB_Cancel, #BA_Closebutton, #ajOldId_BA_Closebutton {
+	text-decoration:underline;
 	color:#005ea5;
 	background:none;
 	box-shadow:none
 }
 
-.formtablebody a:link,.formtablebody a:visited,.formtablebody .button {
+.formtablebody a:link,.formtablebody a:visited,.formtablebody .button{
 	font-size:16px;
 	line-height: 1.25;
 	height:auto;
@@ -1094,62 +1257,47 @@ div.toolbarbuttons_bottom li.tlnoli {
 	box-shadow:none
 }
 
-.aj_bottomtoolbar #BTB_BB_Cancel.button,.aj_bottomtoolbar #BTB_BB_Exit,.aj_bottomtoolbar #BTB_BB_Back,#aj_bodydiv #BB_Cancel.button,.dlgbuttons input[value=Cancel],
-.dlgbuttons input[name="BB_NoBtn"]  {
-	text-align:left
+.tltoolbar input[id$='__link'].button, .tltoolbar #BTB_BB_Back, .tltoolbar #BTB_BB_Close, .tltoolbar #BTB_BB_Cancel, .tltoolbar #BTB_BB_Exit, .tltoolbar #BB_Cancel, .tltoolbar #ajOldId_BTB_BB_Back, .tltoolbar #ajOldId_BTB_BB_Close, .tltoolbar #ajOldId_BTB_BB_Cancel, .tltoolbar #ajOldId_BTB_BB_Exit, .tltoolbar #ajOldId_BB_Cancel, .tltoolbar #BA_Closebutton, .tltoolbar #ajOldId_BA_Closebutton {
+	text-align:left;
 }
 
-.formtablebody a:link:hover,.formtablebody a:visited:hover,.formtablebody .button:hover,.toolbarbuttons_bottom .button:hover,.popuptoolbar .button:hover,
-.tltoolbar .button:hover,.tltoolbar .buttondisabled:hover,#aj_bodydiv #BB_Cancel.button:hover,#aj_bodydiv #BB_NoBtns.button:hover,
-.dlgbuttons input[value=Cancel]:hover,.dlgbuttons input[name="BB_NoBtn"]:hover,#BTB_BB_Cancel:hover{
+.formtablebody a:link:hover,.formtablebody a:visited:hover,.formtablebody .button:hover,input.button[id$='__link']:hover, #BTB_BB_Back:hover, #BTB_BB_Close:hover, 
+#BTB_BB_Cancel:hover, #BTB_BB_Exit:hover, #BB_Cancel:hover, #ajOldId_BTB_BB_Back:hover, #ajOldId_BTB_BB_Close:hover, #ajOldId_BTB_BB_Cancel:hover, 
+#ajOldId_BTB_BB_Exit:hover, #ajOldId_BB_Cancel:hover, #BA_Closebutton:hover, #ajOldId_BA_Closebutton:hover {
 	color:#2e8aca;
 	background-color:#FFF
 }
 
-.formtablebody a:link:focus,.formtablebody a:visited:focus,.formtablebody .button:focus,.toolbarbuttons_bottom .button:focus,.popuptoolbar .button:focus,
-.tltoolbar .button:focus,.tltoolbar .buttondisabled:focus,.dlgbuttons input[value=Cancel]:focus,.dlgbuttons input[name="BB_NoBtn"]:focus{
-	outline:none
+input.button[id$='__link']:disabled:hover,#BTB_BB_Back:disabled:hover,#BTB_BB_Close:disabled:hover,#BTB_BB_Cancel:disabled:hover,
+#BTB_BB_Exit:disabled:hover,#BB_Cancel:disabled:hover,#BA_Closebutton:disabled:hover,#ajOldId_BA_Closebutton:disabled:hover {
+	color:#005ea5
 }
 
-.aj_bottomtoolbar #BTB_BB_Next.buttondisabled,.aj_bottomtoolbar input[type=submit][disabled=disabled],.aj_bottomtoolbar .buttondisabled,.aj_bottomtoolbar [disabled].button, 
-.aj_toptoolbar #BB_Next.buttondisabled,.aj_toptoolbar input[type=submit][disabled=disabled],.aj_toptoolbar .buttondisabled,.aj_toptoolbar [disabled].button
+.aj_bottomtoolbar #BTB_BB_Next.buttondisabled,.aj_bottomtoolbar input[type=submit][disabled=disabled],.aj_bottomtoolbar .buttondisabled,.aj_bottomtoolbar :disabled.button, 
+.aj_toptoolbar #BB_Next.buttondisabled,.aj_toptoolbar input[type=submit][disabled=disabled],.aj_toptoolbar .buttondisabled,.aj_toptoolbar :disabled.button
 {
 	opacity:.5
 }
 
 .PDFOptions input[name="BB_YesBtn"],#OKButton.button,#BB_AddRowAndClose,#BTB_BB_OK,#BB_OK,#BTB_BB_Next,#BB_Next,.FormClose input[name="BB_Save"],.button[id$="__pca"],
 input[type="submit"]#BTB_BA_Backtosummary.button,#BA_Backtosummary.button .dlgbuttons .button,.dlgbuttons input[name="BB_OK"] {
-	background-color:#00823b;
 	position:relative;
 	top:0;
-	padding:.52632em .78947em .26316em;
-	border:none;
-	-webkit-border-radius:0;
-	-moz-border-radius:0;
-	border-radius:0;
-	-webkit-box-shadow:0 2px 0 #003518;
-	-moz-box-shadow:0 2px 0 #003518;
-	box-shadow:0 2px 0 #003518;
 	line-height:1.25;
-	text-decoration:none;
 	-webkit-font-smoothing:antialiased;
 	cursor:pointer;
-	color:#fff;
-	margin-bottom:10px;
-	min-height:38px;
-	min-width:90px;
-	margin-right:10px
 }
 
-#BB_AddRowAndClose:hover,#BB_OK:hover,#BTB_BB_Next:hover,#BB_Next:hover,.FormClose input[name="BB_Save"]:hover,.dlgbuttons .button:hover,.button[id$="__pca"]:hover, 
+input.button[id$='__pca']:hover,#BTB_BB_Next:hover,#BTB_BB_OK:hover,#BB_AddRowAndClose:hover,#BB_OK:hover,#BTB_BB_Next:hover,#BB_Next:hover,
 input[type="submit"]#BTB_BA_Backtosummary.button:hover,input[type="submit"]#BA_Backtosummary.button:hover {
 	background-color:#00692f;
 	color: #fff
 }
 
-div.aj_toptoolbar #BB_OK,div.aj_toptoolbar #BB_tlOld_OK {
-	margin-right:39px;
-	width:275px
+input.button[id$='__pca']:disabled:hover,#BTB_BB_Next:disabled:hover,#BTB_BB_OK:disabled:hover,#BB_AddRowAndClose:disabled:hover,
+#BB_OK:disabled:hover,#BTB_BB_Next:disabled:hover,#BB_Next:disabled:hover,input[type="submit"]#BTB_BA_Backtosummary:disabled.button:hover,
+input[type="submit"]:disabled#BA_Backtosummary.button:hover  {
+	background-color:#00823b
 }
 
 .modalform #BTB_BB_Back {
@@ -1169,34 +1317,55 @@ div.aj_toptoolbar #BB_OK,div.aj_toptoolbar #BB_tlOld_OK {
 	display:none
 }
 
-input[type="submit"]#BTB_BA_Backtosummary.button,input[type="submit"]#BA_Backtosummary.button {
-	display:none
+.nonIE .fieldwithlinkedbutton,.IE9 .fieldwithlinkedbutton,.IE10 .fieldwithlinkedbutton,.fieldwithlinkedbutton {
+	width:auto;
+	padding-right:15px;
+	display:inline-block
+}
+
+.LogonDialog .fieldwidthmodifier.fieldwithlinkedbutton {
+	padding-right: 6px;
+	padding-bottom: 10px
+}
+
+div.toolbarbuttons_bottom li.newlinebutton {
+	display:block
+}
+
+/* Allow linked buttons to use the full width of the page */
+div[id$="__pca-row"].fieldrow .fieldmergedcolumn {
+	width:100%
 }
 
 /* 17. Indented headings */
 fieldset[id$="__ind"] div[id$="__ind"] {
 	height:100%;
 	border-left:solid 10px #bfc1c3;
-	padding:.6em 0 0 2.8em;
-	margin-bottom:1.2em
+	padding:5px 0 5px 20px
 }
 
-fieldset[id$="__ind"] div[id$="__ind"] h4 {
+fieldset[id$="__ind"] div[id$="__ind"] h3 {
 	margin-top:0;
-	font-weight:400
+	font-weight:normal
 }
 
 div[id$="__ind"] .fieldmergedcolumn {
-	font-weight:400;
-	width:auto
+	font-weight:normal;
+	width:auto;
+	margin-top:0;
+	line-height:1.25
+}
+
+.IE6or7 div[id$="__ind"] .fieldmergedcolumn {
+	width:100%
 }
 
 /* 18. Date fields */
-div.hodate,div.hodate input[type="text"],div.hodate label {
+div.hodate,div.hodate input[type="text"],div.hodate span,div.hodate label {
 	float:left
 }
 
-div.hodate label {
+div.hodate span,div.hodate label{
 	font-weight:400;
 	line-height:1.31579;
 	margin-bottom:5px
@@ -1219,11 +1388,13 @@ div.hodate input[type="text"] {
 }
 
 .dayfield,.monthfield {
-	width:3em!important
+	width:3em!important;
+	max-width:56px
 }
 
 .yearfield {
-	width:4em!important
+	width:4em!important;
+	max-width:76px
 }
 
 /* 19. Dialogs */
@@ -1259,6 +1430,19 @@ div.hodate input[type="text"] {
 	font-size:36px
 }
 
+.dialog .fieldcaptioncolumn {
+	width:33%
+}
+
+.dialog {
+	font-size:19px
+}
+
+.dialog .fieldwidthmodifier,.dialog .fieldwidthmodifierdate.formtableaddbuttonhint,.dialog .linkbaritem a,.dialog div.hodate span,.dialog div.hodate label,.dialog #FO_Tob,
+.dialog .fieldinputcolumn,.dialog .helpcontainer {
+	font-size: 16px;
+}
+
 /* 20. Summary section */
 .tl_responsivetable #aj_htmltable_Summary td[id^="BTD_Summary"] {
 	display:none
@@ -1284,17 +1468,9 @@ div.hodate input[type="text"] {
 	display:none
 }
 
-#aj_tablemain_Summary tr>td:nth-child(2) {
-	width:25%
-}
-
-#aj_tablemain_Summary tr>td:nth-child(4) {
-	width:15%
-}
-
 #aj_tablemain_Summary tr.section>td {
 	width:104%;
-	font-size:36px;
+	font-size:24px;
 	line-height:1.11111;
 	font-weight:700;
 	margin-top:8px;
@@ -1302,7 +1478,7 @@ div.hodate input[type="text"] {
 }
 
 #aj_tablemain_Summary td,#aj_tablemain_Summary td a {
-	font-size:19px
+	font-size:16px
 }
 
 .formsectionbody #aj_htmltable_Summary .summaryBorderlessRow {
@@ -1319,6 +1495,10 @@ div.hodate input[type="text"] {
 	padding-left:15px;
 	padding-bottom:10px;
 	margin:0
+}
+
+#aj_htmltable_Summary td a {
+	float: right;
 }
 
 /* 21. Responsive handling */
@@ -1350,7 +1530,7 @@ div.hodate input[type="text"] {
 }
 
 @media only screen and (min-width: 601px) {
-	.open-government-licence h2 {
+	.open-government-licence span {
 		display:inline-block;
 		position: absolute;
 		left: 0;
@@ -1370,6 +1550,11 @@ div.hodate input[type="text"] {
 	.cols2 .fieldmergedcolumn {
 		width: 88%;
 	}
+	
+	.CustomDialog .dialogouter {
+		min-width:577px;
+		width:50%
+	}
 }
 
 @media only screen and (max-width: 800px) {
@@ -1379,7 +1564,25 @@ div.hodate input[type="text"] {
 	}
 }
 
+@media only screen and (max-width: 768px) {
+	.top-bar {
+		margin:0px
+	}
+	.phase-banner {
+		margin:0px;
+		padding:10px 20px
+	}
+}
+
 @media only screen and (max-width: 600px) {
+	.phase-banner span {
+		width:75%
+	}
+	
+	.phase-banner .phase-tag, .phase-banner span {
+		vertical-align:top;
+	}
+
 	h1 {
 		margin-top:1.875em;
 		margin-bottom:.83333em;
@@ -1410,24 +1613,30 @@ div.hodate input[type="text"] {
 		line-height:1.14286
 	}
 
-	fieldset.headingenabled legend, .tlform h2 {
-		font-size:24px;
+	.tlform .secheadertitle, fieldset.headingenabled legend, .tlform h1 {
+		font-size:19px;
 		line-height:1.25em
 	}
-
-	.help-block,div.hodate label,div.hodate input[type="text"],div.errormsgheader+p, .tlform h4 {
+	
+	label,.fieldcaptioncheckbox,.fieldcaptioncolumn_alignright label,.fieldcaptionradio,.fieldmergedcolumn,.top_caption,.fieldcaptionlistbox,.summary,
+	.fieldinputcolumn ul li,.fieldcaptioncolumn,div.aj_table>fieldset>legend,span.errormsgheader,#aj_tablemain_Summary tr.section>td,.tlform h2,.stepindicator {
 		font-size:16px;
+		line-height:1.31579
+	}
+
+	.fieldwidthmodifier,.fieldwidthmodifierdate.formtableaddbuttonhint,.linkbaritem a,#FO_Tob,.fieldinputcolumn,.listboxfield,.helpcontainer,.help-block,
+	.detailwrap,div.hodate label,div.hodate span,div.hodate input[type="text"],span.errormsgsubheader,.tlform h3,.bodytext,.labelsmall,.importanttext,.dialog,select,input[type=text],input[type=email],
+	input[type=number],input[type=tel],input[type=search],input[type=url],input[type=tel],input[type=password],textarea {
+		font-size:14px;
 		line-height:1.25
 	}
 
-	.standardcaptionhelptext .help-block,.standardcaptionhelptext .help-text,.fielderrortext strong,a.aerror,.formsectionbody table.tltable th,.formsectionbody table.tltable td,.formtablebody a:link,.formtablebody a:visited, .formtablebody .button, .tlform h5 {
+	.phase-banner .phase-tag,.phase-banner span,#global-cookie-message p,.standardcaptionhelptext .help-block,.standardcaptionhelptext .help-text,.fielderrortext strong,a.aerror,.formsectionbody table.tltable th,
+	.formsectionbody table.tltable td,.formtablebody a:link,.formtablebody a:visited,.formtablebody .button,#aj_tablemain_Summary td,#aj_tablemain_Summary td a,
+	.tlform h4,.dialog .fieldwidthmodifier,.dialog .fieldwidthmodifierdate.formtableaddbuttonhint,.dialog .linkbaritem a,.dialog div.hodate label,.dialog div.hodate span,.dialog #FO_Tob,
+	.dialog .fieldinputcolumn,.dialog .helpcontainer {
 		font-size:14px;
 		line-height:1.14286
-	}
-
-	label,.fieldcaptioncheckbox,.fieldcaptioncolumn_alignright label,.fieldcaptionradio,.fieldmergedcolumn,.top_caption,.fieldcaptionlistbox,.fieldinputcolumn ul li,.fieldcaptioncolumn,div.aj_table>fieldset>legend,div.errormsgheader, .tlform h3 {
-		font-size:19px;
-		line-height:1.31579
 	}
 
 	.fieldinputcolumn {
@@ -1448,9 +1657,17 @@ div.hodate input[type="text"] {
 		clear:left
 	}
 	
-	.formsectionbody table.tltable th,.formsectionbody table.tltable td {
+	input[type="radio"],input[type="checkbox"] {
+		margin-top:3px
+	}
+	
+	.tl_responsivetable table.tltable th,.tl_responsivetable table.tltable td {
 		padding-left:50%;
 		border-bottom:dotted 1px #b8c6cc!important
+	}
+	
+	.formsectionbody .tl_nonresponsivetable table.tltable th,.formsectionbody .tl_nonresponsivetable table.tltable td {
+		padding-left:0;
 	}
 
 	.formsectionbody #aj_htmltable_Summary th, .formsectionbody #aj_htmltable_Summary td {
@@ -1470,7 +1687,8 @@ div.hodate input[type="text"] {
 	}
 
 	.tl_responsivetable #aj_htmltable_Summary td,.tl_responsivetable #aj_htmltable_Summary th {
-		display:table-cell
+		display:table-cell;
+		position:static
 	}
 
 	.tl_responsivetable #aj_htmltable_Summary .tablerowbuttonsresponsive {
@@ -1483,29 +1701,45 @@ div.hodate input[type="text"] {
 
 	.tablerowbuttonscontainer {
 		display:block;
-		text-align:center;
-		margin-left: 20px;
+		text-align:center
 	}
 	
 	.footer-meta {
-		padding: 0 2px 0 7px;
+		padding:0 2px 0 7px
 	}
 	
-	footer .footer-meta .copyright a {
+	.footer-meta .copyright {
+		text-align:center;
+	}
+	
+	.footerdiv .footer-meta .copyright a {
 		text-align: center;
-		background-position-x: 50%;
+		padding: 115px 7px 0;
+		background-position-x:50%
 	}
 	
 	.footer-meta .copyright, .footer-meta-inner  {
-		width: 100%;
+		width:100%
 	}
 	
 	.open-government-licence {
-		padding-left: 0;
+		padding-left:0
 	}
 	
-	.open-government-licence p, footer .footer-meta .copyright a {
-		font-size: 14px;
+	.open-government-licence p, .footerdiv .footer-meta .copyright a {
+		font-size:14px
+	}
+	
+	.button {
+		font-size:16px!important
+	}
+	
+	.formtablebody .button {
+		font-size:14px!important
+	}
+	
+	.details::before {
+		font-size:10px
 	}
 }
 
@@ -1538,8 +1772,16 @@ div.hodate input[type="text"] {
 		width:auto
 	}
 
-	.nonIE .fieldwidthmodifierlist,.IE8 .fieldwidthmodifierlist,.IE9 .fieldwidthmodifierlist {
+	.tl_responsive .fieldmergedcolumn, .tl_responsive .columns .fieldmergedcolumn {
 		width:100%
+	}
+	
+	.nonIE .fieldwidthmodifierlist,.IE9 .fieldwidthmodifierlist {
+		width:100%
+	}
+	
+	.nonIE .fieldwithlinkedbutton,.IE9 .fieldwithlinkedbutton,.fieldwithlinkedbutton {
+		width:auto
 	}
 
 	.listboxfield {

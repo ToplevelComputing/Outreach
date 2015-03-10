@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <OutreachTheme>
-  <Version>1.0.1.0</Version>
+  <Version>1.0.2.0</Version>
   <Presentation>
     <LayoutType>Responsive</LayoutType>
     <WidthIfFixed>1000px</WidthIfFixed>
@@ -16,7 +16,7 @@
     <IncludeSectionStatusIcons>0</IncludeSectionStatusIcons>
     <ShowDialogsAboveForm>1</ShowDialogsAboveForm>
     <ShowColumnDividers>0</ShowColumnDividers>
-    <ShowMyDetails>1</ShowMyDetails>
+    <ShowMyDetails>0</ShowMyDetails>
   </Presentation>
   <CssSettings>
     <General>
@@ -25,10 +25,10 @@
       </Background>
       <Font>
         <Family>nta</Family>
-        <Size>24px</Size>
+        <Size>19px</Size>
         <Weight>normal</Weight>
         <Style>normal</Style>
-        <Color>#000000</Color>
+        <Color>#0b0c0c</Color>
       </Font>
       <Buttons>
         <Font>
@@ -67,7 +67,7 @@
       <DisabledButtons>
         <Font>
           <Family>[TL_Inherits]</Family>
-          <Size>[TL_Inherits]</Size>
+          <Size>19px</Size>
           <Weight>[TL_Inherits]</Weight>
           <Style>[TL_Inherits]</Style>
           <Color></Color>
@@ -98,6 +98,142 @@
           <BoxShadow>[TL_Inherits]</BoxShadow>
         </BoxShadow>
       </DisabledButtons>
+      <NavigateButtons>
+        <Font>
+          <Family>[TL_Inherits]</Family>
+          <Size>19px</Size>
+          <Weight>[TL_Inherits]</Weight>
+          <Style>[TL_Inherits]</Style>
+          <Color>#005ea5</Color>
+        </Font>
+        <Background>
+          <Color>#ffffff</Color>
+        </Background>
+        <Border>
+          <Width>[TL_Inherits]</Width>
+          <Style>[TL_Inherits]</Style>
+          <Color>[TL_Inherits]</Color>
+          <BorderHorizontalRadius>[TL_Inherits]</BorderHorizontalRadius>
+          <BorderVerticalRadius>[TL_Inherits]</BorderVerticalRadius>
+        </Border>
+        <Padding>
+          <PaddingTop>[TL_Inherits]</PaddingTop>
+          <PaddingRight>0em</PaddingRight>
+          <PaddingBottom>[TL_Inherits]</PaddingBottom>
+          <PaddingLeft>0em</PaddingLeft>
+        </Padding>
+        <Margin>
+          <MarginTop>[TL_Inherits]</MarginTop>
+          <MarginRight>[TL_Inherits]</MarginRight>
+          <MarginBottom>[TL_Inherits]</MarginBottom>
+          <MarginLeft>[TL_Inherits]</MarginLeft>
+        </Margin>
+        <BoxShadow>
+          <BoxShadow>none</BoxShadow>
+        </BoxShadow>
+      </NavigateButtons>
+      <DisabledNavigateButtons>
+        <Font>
+          <Family>[TL_Inherits]</Family>
+          <Size>19px</Size>
+          <Weight>[TL_Inherits]</Weight>
+          <Style>[TL_Inherits]</Style>
+          <Color>#005ea5</Color>
+        </Font>
+        <Background>
+          <Color>#ffffff</Color>
+        </Background>
+        <Border>
+          <Width>[TL_Inherits]</Width>
+          <Style>[TL_Inherits]</Style>
+          <Color>[TL_Inherits]</Color>
+          <BorderHorizontalRadius>[TL_Inherits]</BorderHorizontalRadius>
+          <BorderVerticalRadius>[TL_Inherits]</BorderVerticalRadius>
+        </Border>
+        <Padding>
+          <PaddingTop>[TL_Inherits]</PaddingTop>
+          <PaddingRight>0em</PaddingRight>
+          <PaddingBottom>[TL_Inherits]</PaddingBottom>
+          <PaddingLeft>0em</PaddingLeft>
+        </Padding>
+        <Margin>
+          <MarginTop>[TL_Inherits]</MarginTop>
+          <MarginRight>[TL_Inherits]</MarginRight>
+          <MarginBottom>[TL_Inherits]</MarginBottom>
+          <MarginLeft>[TL_Inherits]</MarginLeft>
+        </Margin>
+        <BoxShadow>
+          <BoxShadow>none</BoxShadow>
+        </BoxShadow>
+      </DisabledNavigateButtons>
+      <CallToActionButtons>
+        <Font>
+          <Family>[TL_Inherits]</Family>
+          <Size>19px</Size>
+          <Weight>[TL_Inherits]</Weight>
+          <Style>[TL_Inherits]</Style>
+          <Color>#ffffff</Color>
+        </Font>
+        <Background>
+          <Color>#00823b</Color>
+        </Background>
+        <Border>
+          <Width>[TL_Inherits]</Width>
+          <Style>[TL_Inherits]</Style>
+          <Color>[TL_Inherits]</Color>
+          <BorderHorizontalRadius>[TL_Inherits]</BorderHorizontalRadius>
+          <BorderVerticalRadius>[TL_Inherits]</BorderVerticalRadius>
+        </Border>
+        <Padding>
+          <PaddingTop>[TL_Inherits]</PaddingTop>
+          <PaddingRight>[TL_Inherits]</PaddingRight>
+          <PaddingBottom>[TL_Inherits]</PaddingBottom>
+          <PaddingLeft>[TL_Inherits]</PaddingLeft>
+        </Padding>
+        <Margin>
+          <MarginTop>[TL_Inherits]</MarginTop>
+          <MarginRight>1em</MarginRight>
+          <MarginBottom>0.5em</MarginBottom>
+          <MarginLeft>[TL_Inherits]</MarginLeft>
+        </Margin>
+        <BoxShadow>
+          <BoxShadow>0 2px 0 #003518</BoxShadow>
+        </BoxShadow>
+      </CallToActionButtons>
+      <DisabledCallToActionButtons>
+        <Font>
+          <Family>[TL_Inherits]</Family>
+          <Size>19px</Size>
+          <Weight>[TL_Inherits]</Weight>
+          <Style>[TL_Inherits]</Style>
+          <Color>#ffffff</Color>
+        </Font>
+        <Background>
+          <Color>#00823b</Color>
+        </Background>
+        <Border>
+          <Width>[TL_Inherits]</Width>
+          <Style>[TL_Inherits]</Style>
+          <Color>[TL_Inherits]</Color>
+          <BorderHorizontalRadius>[TL_Inherits]</BorderHorizontalRadius>
+          <BorderVerticalRadius>[TL_Inherits]</BorderVerticalRadius>
+        </Border>
+        <Padding>
+          <PaddingTop>[TL_Inherits]</PaddingTop>
+          <PaddingRight>[TL_Inherits]</PaddingRight>
+          <PaddingBottom>[TL_Inherits]</PaddingBottom>
+          <PaddingLeft>[TL_Inherits]</PaddingLeft>
+        </Padding>
+        <Margin>
+          <MarginTop>[TL_Inherits]</MarginTop>
+          <MarginRight>1em</MarginRight>
+          <MarginBottom>0.5em</MarginBottom>
+          <MarginLeft>[TL_Inherits]</MarginLeft>
+        </Margin>
+        <BoxShadow>
+          <BoxShadow>0 2px 0 #003518</BoxShadow>
+        </BoxShadow>
+      </DisabledCallToActionButtons>
       <CustomIcons>
         <FileName></FileName>
         <SectionIconsFileName></SectionIconsFileName>
@@ -192,14 +328,21 @@
           <IsFullWidth>0</IsFullWidth>
         </StandardMastheadOrFooter>
         <CustomMastheadOrFooter>
-          <HTMLContent>&lt;header&gt;
- &lt;div class="navbar navbar-fixed-top"&gt;
+          <HTMLContent>&lt;div class="headerdiv"&gt;
+&lt;div id="global-cookie-message" style="display:block;"&gt;    
+&lt;div class="container"&gt;
+&lt;p&gt;The GOV.UK passport appointment service uses cookies to make the site simpler. &lt;a href="_static/cookie_use_hmpo.html" target="_blank"&gt;Find out more about cookies (opens new window)&lt;/a&gt;
+    &lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+ 
+&lt;div class="navbar navbar-fixed-top"&gt;
    &lt;div class="navbar-inner"&gt;
      &lt;div class="container"&gt;
-                &lt;a href="https://www.gov.uk/" target="_blank" title="Go to the GOV.UK homepage" id="logo" class="content"&gt;
-                    &lt;img src="_static/gov.uk_logotype_crown.png" width="35" height="31" alt="Go to the GOV.UK homepage"&gt; GOV.UK
+                &lt;a href="https://www.gov.uk/" target="_blank" title="Go to the GOV.UK homepage (opens new window)" id="logo" class="content"&gt;
+                    &lt;img src="_static/gov.uk_logotype_crown.png" width="35" height="31" alt=""/&gt; GOV.UK
                 &lt;/a&gt;
-&lt;div class="home"&gt;&lt;a href="https://www.gov.uk/" target="_blank" id="proposition-name"&gt;%[Form.TitleNoMarkup]&lt;strong class="phase-tag-beta"&gt;BETA&lt;/strong&gt;&lt;/a&gt;&lt;/div&gt;      
+&lt;div class="home"&gt;&lt;span id="proposition-name"&gt;%[Form.TitleNoMarkup]&lt;/span&gt;&lt;/div&gt;      
 
      &lt;/div&gt;
    &lt;/div&gt;
@@ -209,16 +352,16 @@
 
 &lt;/div&gt;
 
- &lt;div class="container"&gt;
-&lt;div class="sub-header"&gt;
+&lt;div class="container"&gt;
+&lt;div class="phase-banner"&gt;
+  &lt;p&gt;
+    &lt;strong class="phase-tag"&gt;BETA&lt;/strong&gt;
+    &lt;span&gt;This is a new service – your &lt;a href="#"&gt;feedback&lt;/a&gt; will help us to improve it.&lt;/span&gt;
+  &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
-  &lt;div class="container"&gt;
-    &lt;p id="global-cookie-message" style="display:block;"&gt;*.gov.uk uses cookies to make the site simpler. &lt;a href="_static/cookie_use_hmpo.html" target="_blank"&gt;Find out more about cookies&lt;/a&gt;
-    &lt;/p&gt;
-  &lt;/div&gt;
-&lt;/header&gt;</HTMLContent>
+&lt;/div&gt;</HTMLContent>
         </CustomMastheadOrFooter>
       </Masthead>
       <Footer>
@@ -257,13 +400,13 @@
         </StandardMastheadOrFooter>
         <CustomMastheadOrFooter>
           <HTMLContent>&lt;div class="top-bar-footer"&gt;&lt;/div&gt;
-&lt;footer&gt;
+&lt;div class="footerdiv"&gt;
    &lt;div class="container"&gt;
 &lt;div class="row"&gt;
 &lt;div class="footer-meta"&gt;
     &lt;div class="footer-meta-inner"&gt;
 &lt;div class="open-government-licence"&gt;
-              &lt;h2&gt;&lt;a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2" target="_blank"&gt;Open Government Licence&lt;/a&gt;&lt;/h2&gt;
+              &lt;span&gt;&lt;a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2" target="_blank"&gt;Open Government Licence&lt;/a&gt;&lt;/span&gt;
               &lt;p&gt;All content is available under the &lt;a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2" target="_blank"&gt;Open Government Licence v2.0&lt;/a&gt;, except where otherwise stated&lt;/p&gt;
             &lt;/div&gt;
     &lt;/div&gt;
@@ -274,7 +417,7 @@
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;/footer&gt;
+&lt;/div&gt;
 &lt;script type="text/javascript"&gt;
 /* detect device */
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
@@ -297,7 +440,7 @@ document.getElementById("device").style.display = "block";
         <SectionTitle>
           <Font>
             <Family>[TL_Inherits]</Family>
-            <Size>medium</Size>
+            <Size>19px</Size>
             <Weight>bold</Weight>
             <Style>[TL_Inherits]</Style>
             <Color>[TL_Inherits]</Color>
@@ -316,13 +459,13 @@ document.getElementById("device").style.display = "block";
         <Buttons>
           <Font>
             <Family>[TL_Inherits]</Family>
-            <Size>[TL_Inherits]</Size>
+            <Size>19px</Size>
             <Weight>[TL_Inherits]</Weight>
             <Style>[TL_Inherits]</Style>
-            <Color>#005ea5</Color>
+            <Color>[TL_Inherits]</Color>
           </Font>
           <Background>
-            <Color>#ffffff</Color>
+            <Color>[TL_Inherits]</Color>
           </Background>
           <Border>
             <Width>[TL_Inherits]</Width>
@@ -332,25 +475,59 @@ document.getElementById("device").style.display = "block";
             <BorderVerticalRadius>[TL_Inherits]</BorderVerticalRadius>
           </Border>
           <Padding>
-            <PaddingTop>0px</PaddingTop>
-            <PaddingRight>0px</PaddingRight>
-            <PaddingBottom>0px</PaddingBottom>
-            <PaddingLeft>0px</PaddingLeft>
+            <PaddingTop>[TL_Inherits]</PaddingTop>
+            <PaddingRight>[TL_Inherits]</PaddingRight>
+            <PaddingBottom>[TL_Inherits]</PaddingBottom>
+            <PaddingLeft>[TL_Inherits]</PaddingLeft>
           </Padding>
           <Margin>
             <MarginTop>[TL_Inherits]</MarginTop>
-            <MarginRight>14px</MarginRight>
-            <MarginBottom>15px</MarginBottom>
+            <MarginRight>[TL_Inherits]</MarginRight>
+            <MarginBottom>[TL_Inherits]</MarginBottom>
             <MarginLeft>[TL_Inherits]</MarginLeft>
           </Margin>
           <BoxShadow>
-            <BoxShadow>none</BoxShadow>
+            <BoxShadow>[TL_Inherits]</BoxShadow>
           </BoxShadow>
         </Buttons>
         <DisabledToolbarButtons>
           <Font>
             <Family>[TL_Inherits]</Family>
-            <Size>[TL_Inherits]</Size>
+            <Size>19px</Size>
+            <Weight>[TL_Inherits]</Weight>
+            <Style>[TL_Inherits]</Style>
+            <Color>[TL_Inherits]</Color>
+          </Font>
+          <Background>
+            <Color>[TL_Inherits]</Color>
+          </Background>
+          <Border>
+            <Width>[TL_Inherits]</Width>
+            <Style>[TL_Inherits]</Style>
+            <Color>[TL_Inherits]</Color>
+            <BorderHorizontalRadius>[TL_Inherits]</BorderHorizontalRadius>
+            <BorderVerticalRadius>[TL_Inherits]</BorderVerticalRadius>
+          </Border>
+          <Padding>
+            <PaddingTop>[TL_Inherits]</PaddingTop>
+            <PaddingRight>[TL_Inherits]</PaddingRight>
+            <PaddingBottom>[TL_Inherits]</PaddingBottom>
+            <PaddingLeft>[TL_Inherits]</PaddingLeft>
+          </Padding>
+          <Margin>
+            <MarginTop>[TL_Inherits]</MarginTop>
+            <MarginRight>[TL_Inherits]</MarginRight>
+            <MarginBottom>[TL_Inherits]</MarginBottom>
+            <MarginLeft>[TL_Inherits]</MarginLeft>
+          </Margin>
+          <BoxShadow>
+            <BoxShadow>[TL_Inherits]</BoxShadow>
+          </BoxShadow>
+        </DisabledToolbarButtons>
+        <NavigateToolbarButtons>
+          <Font>
+            <Family>[TL_Inherits]</Family>
+            <Size>19px</Size>
             <Weight>[TL_Inherits]</Weight>
             <Style>[TL_Inherits]</Style>
             <Color>#005ea5</Color>
@@ -366,21 +543,123 @@ document.getElementById("device").style.display = "block";
             <BorderVerticalRadius>[TL_Inherits]</BorderVerticalRadius>
           </Border>
           <Padding>
-            <PaddingTop>0px</PaddingTop>
-            <PaddingRight>0px</PaddingRight>
-            <PaddingBottom>0px</PaddingBottom>
-            <PaddingLeft>0px</PaddingLeft>
+            <PaddingTop>[TL_Inherits]</PaddingTop>
+            <PaddingRight>0em</PaddingRight>
+            <PaddingBottom>[TL_Inherits]</PaddingBottom>
+            <PaddingLeft>0em</PaddingLeft>
           </Padding>
           <Margin>
             <MarginTop>[TL_Inherits]</MarginTop>
-            <MarginRight>14px</MarginRight>
-            <MarginBottom>15px</MarginBottom>
+            <MarginRight>1em</MarginRight>
+            <MarginBottom>1em</MarginBottom>
             <MarginLeft>[TL_Inherits]</MarginLeft>
           </Margin>
           <BoxShadow>
             <BoxShadow>none</BoxShadow>
           </BoxShadow>
-        </DisabledToolbarButtons>
+        </NavigateToolbarButtons>
+        <DisabledNavigateToolbarButtons>
+          <Font>
+            <Family>[TL_Inherits]</Family>
+            <Size>19px</Size>
+            <Weight>[TL_Inherits]</Weight>
+            <Style>[TL_Inherits]</Style>
+            <Color>#005ea5</Color>
+          </Font>
+          <Background>
+            <Color>#ffffff</Color>
+          </Background>
+          <Border>
+            <Width>[TL_Inherits]</Width>
+            <Style>[TL_Inherits]</Style>
+            <Color>[TL_Inherits]</Color>
+            <BorderHorizontalRadius>[TL_Inherits]</BorderHorizontalRadius>
+            <BorderVerticalRadius>[TL_Inherits]</BorderVerticalRadius>
+          </Border>
+          <Padding>
+            <PaddingTop>[TL_Inherits]</PaddingTop>
+            <PaddingRight>0em</PaddingRight>
+            <PaddingBottom>[TL_Inherits]</PaddingBottom>
+            <PaddingLeft>0em</PaddingLeft>
+          </Padding>
+          <Margin>
+            <MarginTop>[TL_Inherits]</MarginTop>
+            <MarginRight>1em</MarginRight>
+            <MarginBottom>1em</MarginBottom>
+            <MarginLeft>[TL_Inherits]</MarginLeft>
+          </Margin>
+          <BoxShadow>
+            <BoxShadow>none</BoxShadow>
+          </BoxShadow>
+        </DisabledNavigateToolbarButtons>
+        <CallToActionToolbarButtons>
+          <Font>
+            <Family>[TL_Inherits]</Family>
+            <Size>19px</Size>
+            <Weight>[TL_Inherits]</Weight>
+            <Style>[TL_Inherits]</Style>
+            <Color>#ffffff</Color>
+          </Font>
+          <Background>
+            <Color>#00823b</Color>
+          </Background>
+          <Border>
+            <Width>[TL_Inherits]</Width>
+            <Style>[TL_Inherits]</Style>
+            <Color>[TL_Inherits]</Color>
+            <BorderHorizontalRadius>[TL_Inherits]</BorderHorizontalRadius>
+            <BorderVerticalRadius>[TL_Inherits]</BorderVerticalRadius>
+          </Border>
+          <Padding>
+            <PaddingTop>[TL_Inherits]</PaddingTop>
+            <PaddingRight>[TL_Inherits]</PaddingRight>
+            <PaddingBottom>[TL_Inherits]</PaddingBottom>
+            <PaddingLeft>[TL_Inherits]</PaddingLeft>
+          </Padding>
+          <Margin>
+            <MarginTop>[TL_Inherits]</MarginTop>
+            <MarginRight>1em</MarginRight>
+            <MarginBottom>1em</MarginBottom>
+            <MarginLeft>[TL_Inherits]</MarginLeft>
+          </Margin>
+          <BoxShadow>
+            <BoxShadow>0 2px 0 #003518</BoxShadow>
+          </BoxShadow>
+        </CallToActionToolbarButtons>
+        <DisabledCallToActionToolbarButtons>
+          <Font>
+            <Family>[TL_Inherits]</Family>
+            <Size>19px</Size>
+            <Weight>[TL_Inherits]</Weight>
+            <Style>[TL_Inherits]</Style>
+            <Color>#ffffff</Color>
+          </Font>
+          <Background>
+            <Color>#00823b</Color>
+          </Background>
+          <Border>
+            <Width>[TL_Inherits]</Width>
+            <Style>[TL_Inherits]</Style>
+            <Color>[TL_Inherits]</Color>
+            <BorderHorizontalRadius>[TL_Inherits]</BorderHorizontalRadius>
+            <BorderVerticalRadius>[TL_Inherits]</BorderVerticalRadius>
+          </Border>
+          <Padding>
+            <PaddingTop>[TL_Inherits]</PaddingTop>
+            <PaddingRight>[TL_Inherits]</PaddingRight>
+            <PaddingBottom>[TL_Inherits]</PaddingBottom>
+            <PaddingLeft>[TL_Inherits]</PaddingLeft>
+          </Padding>
+          <Margin>
+            <MarginTop>[TL_Inherits]</MarginTop>
+            <MarginRight>1em</MarginRight>
+            <MarginBottom>1em</MarginBottom>
+            <MarginLeft>[TL_Inherits]</MarginLeft>
+          </Margin>
+          <BoxShadow>
+            <BoxShadow>0 2px 0 #003518</BoxShadow>
+          </BoxShadow>
+        </DisabledCallToActionToolbarButtons>
         <BackNextToolbarButtons>
           <Hidden>false</Hidden>
         </BackNextToolbarButtons>
@@ -520,6 +799,7 @@ document.getElementById("device").style.display = "block";
   <CustomJavaScript>
     <GlobalScript>&lt;link rel="stylesheet" type="text/css" href="_static/GDS-sectionbuttons.css" /&gt;
 &lt;link rel="stylesheet" type="text/css" href="_static/OutreachGDS.css" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="_static/IPS.css" /&gt;
 &lt;link rel="stylesheet" type="text/css" href="_static/accordion.css" /&gt;
 
 &lt;script type="text/javascript" src="_static/jquery-1.11.1.min.js"&gt;&lt;/script&gt;
@@ -530,6 +810,7 @@ document.getElementById("device").style.display = "block";
     &lt;script src="_static/html5shiv.js"&gt;&lt;/script&gt;
 &lt;![endif]--&gt;
 &lt;script type="text/javascript" src="_static/OutreachGDS.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="_static/IPS.js"&gt;&lt;/script&gt;
   
 
 </GlobalScript>
@@ -538,10 +819,10 @@ TLCustomOnLoad = function(args)
 {
   checkCookieSeen();
 
-$("input.formtextfield_erra").change(function () {
+  $("input.formtextfield_erra").change(function () {
         TopErrorMessage();
         
-    });
+  });
 
     GDSDateChange();
     SlideShow();
@@ -551,7 +832,12 @@ $("input.formtextfield_erra").change(function () {
     GroupRadioButtons();
     FixRadioFields();
     StandardCaptionMicroHelp();
-    DisableProgressBar();
+    adjustAvailableAdults();
+    adjustAvailableChildren();
+    ReorderSummaryButtons();
+
+    $("input[type='radio'][name='F_Adult_count']").change(adjustAvailableChildren);
+    $("input[type='radio'][name='F_Child_count']").change(adjustAvailableAdults);
 
     $("input[type='radio'], input[type='checkbox']").each(function() {
          if ($(this).is(':checked')) { 
@@ -576,6 +862,12 @@ $("input.formtextfield_erra").change(function () {
         }
     });
 
+    $("input[type='radio'], input[type='checkbox']").focus(function(){
+	$("label[for='" + this.id + "']").addClass("focused");
+	}).blur(function() {
+	$("label").removeClass("focused");
+    });
+
     //scrollToDialog("#tlTableInlineAddRowContent");
     if ($("div.CloseDialog").is('*')) {
         $('form[name="worldpay"]').hide();
@@ -590,6 +882,18 @@ $("input.formtextfield_erra").change(function () {
     }
     $(".PDFOptions input[name='BB_YesBtn']").click();
     PdfDownload();
+    OlderBrowserFunc();
+
+    // IPS-Specific code
+    DisableContinue();
+    %[If Summary &lt;&gt; ""]%[Summary]%[EndIf]%/
+    SelectDay();
+    SelectTime();
+    %[If ChangeCancelButtonText &lt;&gt; ""]$('#BTB_BB_Cancel').val("%[ChangeCancelButtonText]");$('#BTB_BB_Cancel').prop("title","%[ChangeCancelButtonText] (accesskey = c)");%[EndIf]%/
+
+%[if ReqFieldNames &lt;&gt; ""]%/
+%[ReqFieldNames]%/
+%[endif]%/
 }
 &lt;/script&gt;</OnLoadScript>
   </CustomJavaScript>

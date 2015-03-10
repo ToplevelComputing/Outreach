@@ -24,167 +24,73 @@
 %[Define fragFormCloseTitleJS = Exit application] 
 %[Define IDS_FORM_CLOSE_TITLE = Exit application] 
 %[Define IDS_ALLDONE_NOSAVE = The application has been closed.]
-%[Define IDS_TB_LABEL_OK = Save and back to main application]
 %[Define fragPDFPrintTitle = Download PDF]%[Define fragPDFPrintBtn = Download]%[Define fragPDFOptPrint = To Download The PDF:]
+
+%[Define IDS_EMAIL_ADDRESS_ERROR = Please enter a valid email address.]
+%[Define IDS_COI_RANDAT = Please enter a valid date.]
+%[Define IDS_CREDIT_CARD_INVALID_CHARACTER = Please enter a valid phone number.]
 
 %/------------------------------------------------------------------------------------------
 %[=== Fragment ToplevelInfo ===============================================================]
 %/------------------------------------------------------------------------------------------
 %[=== Fragment ShareWidgetIncludes ========================================================]
 %/------------------------------------------------------------------------------------------
-%[=== Fragment HTMLVersionIE4 =====================================================================]
-<!doctype html> 
-%/----------------------------------------------------------------------------------------------------
-%[=== Fragment HTMLVersionAccess =====================================================================]
-<!doctype html> 
-%/----------------------------------------------------------------------------------------------------
-%[=== Fragment HTMLVersionDefault =====================================================================]
-<!doctype html> 
-%/----------------------------------------------------------------------------------------------------
-%[=== Fragment FormSectionIE4 ==================================================================]
-%[Expand "HTMLVersion"]
-<!--[if IE 7]> <html class="ie7 no-js" lang="en-US"><![endif]-->
-<!--[if IE 8]> <html class="ie8 no-js" lang="en-US"><![endif]-->
-<!--[if IE 9]> <html class="ie9 no-js" lang="en-US"><![endif]-->
-<html lang="en" class="no-js">
-%[Expand "ToplevelInfo"]
-<head>
-%[Expand "FirstHeadIncludes"]%/
-<!-- AJAXSTART:aj_title -->%/
-<title>%[Form.TitleNoMarkup]</title>
-<!-- AJAXEND:aj_title -->%/
-%[Expand "CustomThemeStyleSheets"]%/
-%[Expand "StandardStyleSheet"]%/
-%[Expand "InternalStyles"]%/
-<!-- AJAXSTART:aj_stylesheet -->%/
-%[Expand "CustomStyleSheet"]
-<!-- AJAXEND:aj_stylesheet -->%/
-%[Expand "FormSectionHeadIncludes"]%/ <!--form head settings expanded here, e.g. meta tags, scripts etc.-->
-%[Expand "CustomHeadIncludes"]%/
-%[if Css <> ""]
-<style>%[Css]</style>
-%[endif]
-%[if Js <> ""]
-<script type="text/javascript">
-%[Js]
-</script>
-%[endif]
-%[if Summary <> ""]
-<script type="text/javascript">
-%[Summary]
-</script>
-%[endif]
-<script type="text/javascript">
-function DisableProgressBar() {
-%[If DisableProgressBar <> ""]
-%[DisableProgressBar]
-%[endif]
-}
-</script>
-</head>
-
-<!-- AJAXSTART:aj_body -->%/
-<body class="formsectionbody%[If IsModal<>""] modalform%[Endif]" id="aj_body" onload="%[Expand "OnLoadHandler"]" %[Expand "FormSectionBodyIncludes"]>%/
-%[Expand "StartOfFormSectionBody"]%/ Opens <div><form><div>
-%/
-<!-- AJAXSTART:aj_formheader -->%/
-<div class="aj_formheader" id="aj_formheader">%/
-%[Expand "FormSectionHeader"]%/
-</div>%/
-<!-- AJAXEND:aj_formheader -->%/
-
-<!-- Main content -->
-%[Expand "MainContentIE4"]%/
-<!-- End of main content -->
-</div>
-</form>
-<!-- Footer -->
-%[Expand "FormSectionFooterContainer"]
-<!-- End of footer -->
-</div>
-</div>
-</body>
-<!-- AJAXEND:aj_body -->%/
-</html>
-%/----------------------------------------------------------------------------------------------------
-%[=== Fragment DialogMainIE4 ==================================================================]
-%[Expand "HTMLVersionIE4"]
-<!--[if IE 7]> <html class="ie7 no-js" lang="en-US"><![endif]-->
-<!--[if IE 8]> <html class="ie8 no-js" lang="en-US"><![endif]-->
-<!--[if IE 9]> <html class="ie9 no-js" lang="en-US"><![endif]-->
-<html lang="en" class="no-js">
-%[Expand "ToplevelInfo"]
-<head>
-%[Expand "FirstHeadIncludes"]%/
-<!-- AJAXSTART:aj_title -->%/
-<title>%[Dialog.Title]</title>
-<!-- AJAXEND:aj_title -->%/
-%[Expand "CustomThemeStyleSheets"]%/
-%[Expand "StandardStyleSheet"]%/
-%[Expand "InternalStyles"]%/
-<!-- AJAXSTART:aj_stylesheet -->%/
-%[Expand "CustomStyleSheet"]
-<!-- AJAXEND:aj_stylesheet -->%/
-%[Expand "DialogHeadIncludes"]%/ <!--dialog head settings expanded here, e.g. meta tags, scripts etc.-->
-%[Expand "CustomHeadIncludes"]%/
-<script type="text/javascript">
-function DisableProgressBar() {
-}
-</script>
-</head>
-
-<!-- AJAXSTART:aj_body -->%/
-<body class="%[Expand "DialogBodyClass"]"%/
- id="aj_body" onload="%[Expand "OnLoadHandler"]" %[Expand "DialogBodyIncludes"]>%/
-%[Expand "StartOfDialogBody"]%/<!--Opens <div><form><div class="%[Dialog.Type]"><div>-->
-
-%[Expand "DialogHeaderCustomisable1"]%/
-<div> </div>%/<!-- Div works around IE top-margin bug; search JS for dialogoutertopmarginfix for details -->
-<div id="tldialogouter" class="dialogouter"%[If Dialog.Width<>""] style="width:%[Dialog.Width]"%[Endif]>%/
-<div id="tldialoginner" class="dialoginner">
-%/ <!-- Generally only form script will set the Dialog.Width[InEms] tokens.
-%/ Default dialog widths are specified in the CSS rather than in the root fragments -->
-%/
-%[Expand "DialogHeaderCustomisable"]%/
-</div><!-- end dialoginner -->
-<div class="dialog">
-
-%[Expand "DialogCustomMessage"]%/
-
-<!-- Dialog main content -->
-%[Expand "DialogMainContentIE4"]%/
-<!-- End of dialog main content -->
-
-<div style="clear:both;"></div>
-</div><!-- end dialog -->
-%[Expand "DialogFooterCustomisable"]
-%[Expand "AccessibleDialogEndLink"]%/
-</div><!-- end dialogouter -->
-%[Expand "DialogFooterCustomisable1"]
-
-</div>
-</form>
-</div>
-<div id="fb-root"></div>%/ <!-- This is needed for the Facebook share widget, it's here so that when shown modally we don't end up with 2 in the DOM -->
-</body>
-<!-- AJAXEND:aj_body -->%/
-</html>%/
-%[ClearVar bInDialog]%/
-%/----------------------------------------------------------------------------------------------------
-%[=== Fragment SectionButtonIE4 =====================================================================]
-<!-- Section Button -->%/
-%[If Presentation.SectionButtonType <> "Tabs"]%/
-<div class="%[if Sb.IsCurrent=1]current%[elseif Sb.IsDisabled=1]disabled%[else]enabled%[endif]sectionindicator">%/
-</div>%/
+%[=== Fragment CustomHeadIncludes ==================================================================]
+<!-- AJAXSTART:ips_custom_css -->
+<link rel="shortcut icon" href="_static/favicon.ico" />
+%[if Css <> ""]%/
+<style type="text/css">%[Css]</style>
+%[endif]%/
+<!-- AJAXEND:ips_custom_css -->
+<!-- AJAXSTART:ips_browser_handling -->
+%[If Form.BrowserIsIENonCompat=1]%/
+%[If Form.BrowserIEVersionNonCompat < 9]%/
+<link rel="stylesheet" type="text/css" href="_static/IE8.css" />
 %[Endif]%/
-<input type="submit" name="%[Sb.SecName]" %/
-class="%[if Sb.IsCurrent=1]current%[elseif Sb.IsDisabled=1]disabled%[else]enabled%[endif]sectionbutton" %/
-%[if Sb.IsDisabled = 1]disabled="disabled"%[endif] value="%[Sb.Label]" %/
-title="%[If DisableProgressBar <> ""]%[Expand "StrictWizardProgressTitle"]%[Else]%[Expand "SectionButtonTitle"]%[EndIf]"/>%/
+%[If Form.BrowserIEVersionNonCompat < 8]%/
+<link rel="stylesheet" type="text/css" href="_static/IE7.css" />
+%[Endif]%/
+%[If Form.BrowserIEVersionNonCompat < 7]%/
+<link rel="stylesheet" type="text/css" href="_static/IE6.css" />
+%[Endif]%/
+%[Endif]%/
+<script type="text/javascript">
+var reqFieldNames = new Array();
+function OlderBrowserFunc() {
+%[If Form.BrowserIsIENonCompat=1]%/
+%[If Form.BrowserIEVersionNonCompat < 9]%/
+	$("input[name='SelectDay']").click(function() {
+		$("input[name='SelectDay']").next().children("div").toggleClass("checked", false);
+		$(this).next().children("div").toggleClass("checked", true);
+	});
+	  
+	$("input[name='SelectTime']").click(function() {
+		$("input[name='SelectTime']").next().children("div").toggleClass("checked", false);
+		$(this).next().children("div").toggleClass("checked", true);
+	});
+%[Endif]%/
+%[Endif]%/
+return true;
+}
+</script>
+<!-- AJAXEND:ips_browser_handling -->
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment SectionButtonContainerTabs =====================================================================]
+<!-- Section Buttons -->%/
+%[if StepIndicator <> ""]%/
+%[StepIndicator]%/
+%[endif]%/
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment SectionDropDown =====================================================================]
 %/----------------------------------------------------------------------------------------------------
 %[=== Fragment StrictWizardProgressTitle =====================================================================]
 %[ExpandString "fragSectionInactiveTip"]%/
  %[Sb.Label]%/
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment InlineErrorText =====================================================================]
+%[If Obj.FieldHasErrors = 1]%[If Presentation.ExpandErrors = 1]%/
+<div class="fielderrortext" id="err_%[Obj.Name]"><strong>%[Obj.FieldErrorText]</strong></div>
+%[Endif]%[Endif]%/
 %/----------------------------------------------------------------------------------------------------
 %[=== Fragment CaptionIE4 =====================================================================]
 %[If Table.DistinctClassCaptionsImplemented = 1]%/
@@ -311,7 +217,7 @@ onclick="return ReloadLinkClicked('%[Row.SelectButtonName]=1');"%[Endif]>
 <script src="tlscript.compressed.ojs" type="text/javascript"></script>
 %[Expand "StandardStyleSheet"]%/
 <link rel="stylesheet" type="text/css" href="%[Form.StyleURL]" title="OfficeFormsStyle" />
-<style>
+<style type="text/css">
 .tlform .popupheader, .popupcontent {
 line-height: 1.2em;
 }
@@ -349,4 +255,30 @@ margin-bottom: 1em;
 </form>
 </body>
 </html>
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment MastheadContentContainer ===================================================]
+%[If ThemeEditor.CustomHeaderFooterMode > 0]%/
+	%[If ThemeEditor.CustomHeaderFooterMode <> 2]%/
+		<div id="tl-custom-header" class="tlcustomcontent"> 
+			%[Expand "CustomMastheadContent"]%/
+		</div>
+	%[Else]%/
+		%[Expand "Masthead"]%/			
+	%[EndIf]%/		
+%[Else]%/
+	%[Expand "Masthead"]%/
+%[EndIf]%/
+%/----------------------------------------------------------------------------------------------------
+%[=== Fragment FormSectionFooterContainer ===================================================]
+%[If ThemeEditor.CustomHeaderFooterMode > 0]%/
+	%[If ThemeEditor.CustomHeaderFooterMode <> 1]%/
+		<div id="tl-custom-footer" class="tlcustomcontent"> 
+			%[Expand "CustomFooterContent"]%/
+		</div>
+	%[Else]%/
+		%[Expand "FormSectionFooter"]%/			
+	%[EndIf]%/
+%[Else]%/
+	%[Expand "FormSectionFooter"]%/
+%[EndIf]%/
 %/----------------------------------------------------------------------------------------------------
