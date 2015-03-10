@@ -10,6 +10,7 @@ function TopErrorMessage() {
     }
     var showMoreClosingCode = "";
     var errorHTML = "";
+
 	if($("h2.info").children(".errormsgheader").length === 0 && $("h2.info a").children(".errormsgheader").length === 0) {
 		$("h2.info a").prepend("<span class='errormsgheader'>There is a problem with this section</span><span class='errormsgsubheader'>Please fix the following:</span>");
 	}
@@ -34,14 +35,14 @@ function TopErrorMessage() {
                 showMoreClosingCode = "</div><div style=\"text-align:right\"><button type=\"button\" id=\"showmorebutton__link\" class=\"morelink\" onclick=\"ToggleExtraErrors();\">More</button></div>";
             }
 			
-            if ($(this).find("span").length === 0) {
-                $(this).html("<span id='aerror" + (i + 1) + "'>" + (i + 1) + ". " + $(this).html() + '</span>');
+			if ($(this).find("span").length === 0) {
+				$(this).html("<span id='aerror" + (i + 1) + "'>" + (i + 1) + ". " + $(this).html() + '</span>');
             }
 			
 			if (i > 4) {
-				errorHTML += "<a href='#aerror" + (i + 1) + "' id='message" + (i + 1) + "' name='message" + (i + 1) + "' class='aerror'>" + $(this).html() + "</a><br/>";
+				errorHTML += "<a href='#aerror" + (i + 1) + "' id='message" + (i + 1) + "' name='message" + (i + 1) + "' class='aerror'>" + $(this).find("span").html() + "</a><br/>";
 			} else {
-                $("h2.info").html($("h2.info").html() + "<a href='#aerror" + (i + 1) + "' id='message" + (i + 1) + "' name='message" + (i + 1) + "' class='aerror'>" +  $(this).html() + "</a><br/>");
+                $("h2.info").html($("h2.info").html() + "<a href='#aerror" + (i + 1) + "' id='message" + (i + 1) + "' name='message" + (i + 1) + "' class='aerror'>" + $(this).find("span").html() + "</a><br/>");
 			}
         });
 	if (haslist === true) {
