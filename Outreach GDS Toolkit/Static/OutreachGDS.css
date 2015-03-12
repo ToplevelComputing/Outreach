@@ -982,7 +982,7 @@ legend .aj_formmessage {
 }
 
 .details {
-	display:inline-block
+	display:block
 }
 
 .details > span {

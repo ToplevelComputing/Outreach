@@ -10,7 +10,7 @@ function TopErrorMessage() {
     }
     var showMoreClosingCode = "";
     var errorHTML = "";
-
+	
 	if($("h2.info").children(".errormsgheader").length === 0 && $("h2.info a").children(".errormsgheader").length === 0) {
 		$("h2.info a").prepend("<span class='errormsgheader'>There is a problem with this section</span><span class='errormsgsubheader'>Please fix the following:</span>");
 	}
@@ -107,9 +107,9 @@ function GDSDateChange() {
 			var currentOnChange = elem.attributes["onchange"].value;
 			var inputbox;
 			if (currentName.substring(0,3) == "FD_") {
-				inputbox = $('<div class="hodate"><span>' + label + '</span><input type="text" name="' + elem.name + '" id="' + elem.id + '" onchange="setTimeout(function() {' + currentOnChange + '}, 500);" class="' + elem.className + '" maxlength="' + len + '" size="' + len + '"></div>'); 
+				inputbox = $('<div class="hodate"><span>' + label + '</span><input type="text" name="' + elem.name + '" id="' + elem.id + '" onchange="' + currentOnChange + '" class="' + elem.className + '" maxlength="' + len + '" size="' + len + '"></div>'); 
 			} else { 
-				inputbox = $('<div class="hodate"><label for="' + elem.name + '">' + label + '</label><input type="text" name="' + elem.name + '" id="' + elem.id + '" onchange="setTimeout(function() {' + currentOnChange + '}, 500);" class="' + elem.className + '" maxlength="' + len + '" size="' + len + '"></div>'); 
+				inputbox = $('<div class="hodate"><label for="' + elem.name + '">' + label + '</label><input type="text" name="' + elem.name + '" id="' + elem.id + '" onchange="' + currentOnChange + '" class="' + elem.className + '" maxlength="' + len + '" size="' + len + '"></div>'); 
 			}
 			$(elem).replaceWith(inputbox);
 			$("#" + currentId).val(currentValue);
