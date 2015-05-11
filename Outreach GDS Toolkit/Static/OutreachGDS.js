@@ -242,7 +242,7 @@ function ReorderBottom() {
 // Moves radio button inside it's label for correct styling.
 // Also assigns a class to horizontal radio groups, allowing targeted css selection.
 function GroupRadioButtons() {
-	$(".radiogroup, .radiogroup_err, .checkboxfield, .checkboxfield_err").find('input').each(function(){
+	$(".radiogroup, .radiogroup_err").find('input').each(function(){
 		if(!$(this).parent('label').length) {
 			$(this).prependTo($(this).next());
 		}
@@ -250,6 +250,14 @@ function GroupRadioButtons() {
 	
 	$(".radiogroup").not(":has(br)").addClass("radiogroup_horizontal");
 	$(".radiogroup_err").not(":has(br)").addClass("radiogroup_horizontal");
+}
+
+function GroupCheckboxes() {
+	$(".checkboxfield, .checkboxfield_err").find('input').each(function() {
+		if(!$(this).parent('label').length && $("label[for="+ $(this).attr('id') +"]").length) {
+			$(this).prependTo( $("label[for="+ $(this).attr('id') +"]") );
+		}
+	});
 }
 
 // Assigns classes to input and merged columns with radio fields, to allow 

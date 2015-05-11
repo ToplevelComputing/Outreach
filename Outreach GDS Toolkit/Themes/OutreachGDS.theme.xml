@@ -331,7 +331,7 @@
           <HTMLContent>&lt;div class="headerdiv"&gt;
 &lt;div id="global-cookie-message" style="display:block;"&gt;    
 &lt;div class="container"&gt;
-&lt;p&gt;The GOV.UK passport appointment service uses cookies to make the site simpler. &lt;a href="_static/cookie_use_hmpo.html" target="_blank"&gt;Find out more about cookies (opens new window)&lt;/a&gt;
+&lt;p&gt;This GOV.UK service uses cookies to make the site simpler. &lt;a href="_static/cookie_use.html" target="_blank"&gt;Find out more about cookies (opens new window)&lt;/a&gt;
     &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -399,32 +399,21 @@
           <IsFullWidth>0</IsFullWidth>
         </StandardMastheadOrFooter>
         <CustomMastheadOrFooter>
-          <HTMLContent>&lt;div class="top-bar-footer"&gt;&lt;/div&gt;
-&lt;div class="footerdiv"&gt;
-   &lt;div class="container"&gt;
-&lt;div class="row"&gt;
-&lt;div class="footer-meta"&gt;
-    &lt;div class="footer-meta-inner"&gt;
-&lt;div class="open-government-licence"&gt;
-              &lt;span&gt;&lt;a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2" target="_blank"&gt;Open Government Licence&lt;/a&gt;&lt;/span&gt;
-              &lt;p&gt;All content is available under the &lt;a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2" target="_blank"&gt;Open Government Licence v2.0&lt;/a&gt;, except where otherwise stated&lt;/p&gt;
+          <HTMLContent>&lt;div id="footer" class="footerdiv"&gt;
+      &lt;div class="footer-wrapper"&gt;
+        &lt;div class="footer-meta"&gt;
+          &lt;div class="footer-meta-inner"&gt;
+            &lt;div class="open-government-licence"&gt;
+              &lt;span&gt;&lt;a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license"&gt;Open Government Licence&lt;/a&gt;&lt;/span&gt;
+              &lt;p&gt;All content is available under the &lt;a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license"&gt;Open Government Licence v3.0&lt;/a&gt;, except where otherwise stated&lt;/p&gt;
             &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="copyright"&gt;
+            &lt;a href="https://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm"&gt;© Crown copyright&lt;/a&gt;
+          &lt;/div&gt;
+       &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class="copyright"&gt;
-            &lt;a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm" target="_blank"&gt;© Crown copyright&lt;/a&gt;
-      &lt;/div&gt;
-   &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;script type="text/javascript"&gt;
-/* detect device */
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-document.getElementById("device").style.display = "block";
-}
-&lt;/script&gt;
-</HTMLContent>
+&lt;/div&gt;</HTMLContent>
         </CustomMastheadOrFooter>
       </Footer>
       <Title>
@@ -828,6 +817,7 @@ TLCustomOnLoad = function(args)
     Summary();
     ReorderBottom();
     GroupRadioButtons();
+    GroupCheckboxes();
     FixRadioFields();
     StandardCaptionMicroHelp();
 

@@ -55,6 +55,10 @@
 }
 
 /* 2. Global page & text styling */
+html {
+	background-color:#dee0e2
+}
+
 .screenreader {
 	position:absolute;
 	left:-9999px
@@ -318,90 +322,98 @@ div.home {
 }
 
 /* 4. Footer - open government license notice & crown copyright logo */
-.footerdiv {
-	background-color:#dee0e2!important;
-	border-top:1px solid #a1acb2
+#footer {
+	background-color: #dee0e2;
+	border-top: 1px solid #a1acb2
 }
 
-.footerdiv .container {
-	padding:0 1em 60px;
-	overflow:auto
-}
-
-.footer-meta {
-	border-width:1px 0 0;
-	margin:20px 0 0;
-	padding:0 17px 0px 22px;
-	font-size:14px;
+#footer a {
 	color:#454a4c
 }
 
-.footer-meta a {
-	color:#454a4c!important
+#footer a:hover {
+  color: #171819;
 }
 
-.footer-meta a:hover {
-	color:#171819!important
+#footer .footer-wrapper {
+	width: auto;
+	max-width: 1020px;
+	padding-top:60px;
+	background-color: #dee0e2;
+	margin: 0 auto
 }
 
-.footer-meta .copyright {
-	font-size:16px;
-	line-height:1.25;
-	display:inline-block;
-	width:25%;
-	padding-top:15px;
-	text-align:right
+#footer .footer-meta {
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 60px;
+	clear: both;
+	font-size: 0;
+	color: #454a4c
 }
 
-.footerdiv .footer-meta .copyright a {
-	display:inline-block;
-	padding:115px 0 0;
-	background:transparent url(../_static/govuk-crest.png) no-repeat 100% 0;
-	text-align:right;
-	text-decoration:none;
-	margin:0 auto
+#footer .footer-meta .footer-meta-inner {
+	display: inline-block;
+	vertical-align: bottom;
+	width:75%
 }
 
-.footer-meta-inner {
-	display:inline-block;
-	vertical-align:bottom;
-	width:74%
+#footer .footer-meta .footer-meta-inner .open-government-licence {
+	clear:left;
+	position:relative;
+	padding-left:53px
 }
 
-.open-government-licence {
-	position: relative;
-	padding-left: 54px;
-}
-
-.open-government-licence p {
-	font-size: 16px;
-	line-height:1.25;
-	margin-bottom: 0;
-	padding-top: 0.1em;
-}
-
-.open-government-licence span {
+#footer .footer-meta .footer-meta-inner .open-government-licence span {
 	margin-bottom: 1em;
+	padding-top: 0;
 }
 
-.open-government-licence span a {
-	display:block;
-	width:41px;
-	height:17px;
-	overflow:hidden;
-	text-indent:-999em;
-	background:url(../_static/open-government-licence.png) 0 0 no-repeat;
-	direction: ltr;
+#footer .footer-meta .footer-meta-inner .open-government-licence span, #footer .footer-meta .footer-meta-inner .open-government-licence p {
+	font-size: 16px;
+	line-height: 1.25;
+	font-weight: 400;
+	text-transform: none;
+	margin: 0;
+	padding-top: 0.1em
 }
 
-/* 5. Header & footer separation bars (the colour of these should be modified 
+#footer .footer-meta .footer-meta-inner .open-government-licence span a {
+	display: block;
+	width: 41px;
+	height: 17px;
+	overflow: hidden;
+	text-indent: -999em;
+	background: url(../_static/open-government-licence.png) 0 0 no-repeat;
+	background-size: 41px 17px
+}
+
+#footer .footer-meta .copyright {
+	font-family: "nta", Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.25;
+	font-weight: 400;
+	text-transform: none;
+	margin: 30px 0 0 0;
+	width: 100%;
+	display: block
+}
+
+#footer .footer-meta .copyright a {
+	display: block;
+	background-image: url(../_static/govuk-crest.png);
+	background-repeat: no-repeat;
+	background-position: 100% 0%;
+	text-align: right;
+	text-decoration: none;
+	padding: 115px 0 0 0;
+}
+
+/* 5. Header separation bar (the colour of this should be modified 
    to your government department's appropriate colour scheme */
-.top-bar,.top-bar-footer {
-	background-color:#005EA5;
-	height:10px
-}
-
 .top-bar {
+	background-color:#005EA5;
+	height:10px;
 	margin:0 20px
 }
 
@@ -577,6 +589,10 @@ input[type="text"]:focus,select:focus,textarea:focus {
 	outline:solid 3px #ffbf47
 }
 
+textarea:focus[readonly="readonly"], textarea:focus[readonly] {
+	outline:none
+}
+
 select,input[type=text],input[type=email],input[type=number],input[type=tel],input[type=search],input[type=url],input[type=tel],input[type=password],textarea {
 	background-color:#fff;
 	border:1px solid #bfc1c3;
@@ -591,9 +607,10 @@ select,input[type=text],input[type=email],input[type=number],input[type=tel],inp
 }
 
 select:disabled, input[type=text]:disabled, input[type=email]:disabled, input[type=number]:disabled, input[type=tel]:disabled, input[type=search]:disabled,
-input[type=url]:disabled, input[type=tel]:disabled, input[type=password]:disabled, textarea:disabled {
+input[type=url]:disabled, input[type=tel]:disabled, input[type=password]:disabled, textarea[readonly="readonly"], textarea[readonly], .disabledrichtextarea {
 	background-color:#ebebeb;
-	color:#545454
+	color:#545454;
+	border:1px solid #bfc1c3
 }
 
 select,input[type=text],input[type=email],input[type=number],input[type=tel],input[type=search],input[type=url],input[type=tel],input[type=password] {
@@ -601,6 +618,12 @@ select,input[type=text],input[type=email],input[type=number],input[type=tel],inp
 	padding:4px;
 	margin:2px 0;
 	width:100%
+}
+
+.formtextarea {
+	width:97%;
+	padding:4px;
+	margin:10px 0
 }
 
 div.KeyBasedStartDialog div.fieldinputcolumn {
@@ -635,7 +658,7 @@ input[id$="__sm"] {
 	line-height:2px
 }
 
-.radiogroup label,.checkboxfield label,.radiogroup_err label,.checkboxfield_err label {
+.radiogroup label,.checkboxfield label,.radiogroup_err label,.checkboxfield_err label, .fieldcaptioncheckbox label {
 	top:0;
 	display:block;
 	float:none;
@@ -1106,6 +1129,10 @@ table.tltable tbody tr {
 	border-bottom:1px solid #ddd!important
 }
 
+.tl_responsivetable table.tltable tbody tr {
+	padding-bottom:1px
+}
+
 .formsectionbody table.tltable th,.formsectionbody table.tltable td {
 	line-height:1.25em;
 	text-align:left;
@@ -1225,7 +1252,7 @@ div.toolbarbuttons_bottom li.tlnoli {
 }
 
 .aj_bottomtoolbar #BTB_BB_Back {
-	margin-top:-15px
+	margin-top:-10px
 }
 
 .button, .buttondisabled {
@@ -1502,6 +1529,18 @@ div.hodate input[type="text"] {
 }
 
 /* 21. Responsive handling */
+@media only screen and (-webkit-min-device-pixel-ratio: 2), not all, not all, not all, only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx){
+	#footer .footer-meta .footer-meta-inner .open-government-licence span a {
+		background-image: url(../_static/open-government-licence_2x.png);
+		background-size: 41px 17px
+	}
+	
+	#footer .footer-meta .copyright a {
+		background-image: url(../_static/govuk-crest-2x.png);
+		background-size: 125px 102px
+	}
+}
+
 @media only screen and (min-width: 801px) {
 	.tl_responsive .cols4 .fieldinputcolumn,.tl_responsive .cols4 .fieldcaptioncolumn,
 	.tl_responsive .cols5 .fieldinputcolumn,.tl_responsive .cols5 .fieldcaptioncolumn,.tl_responsive .cols6 .fieldinputcolumn,.tl_responsive .cols6 .fieldcaptioncolumn	{
@@ -1526,6 +1565,24 @@ div.hodate input[type="text"] {
 
 	.cols3 .fieldmergedcolumn {
 		width: 88%;
+	}
+}
+
+@media only screen and (min-width: 641px) {
+	#footer .footer-meta .footer-meta-inner .open-government-licence span {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 41px;
+		height: 100%;
+	}
+	
+	#footer .footer-meta .copyright {
+		display: inline-block;
+		text-align: inherit;
+		width: 25%;
+		padding-top: 15px;
+		margin-top: 0
 	}
 }
 
@@ -1574,6 +1631,36 @@ div.hodate input[type="text"] {
 	}
 }
 
+@media only screen and (max-width: 640px) {
+	#footer .footer-wrapper {
+		padding-top: 20px
+	}
+
+	#footer .footer-meta {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	#footer .footer-meta .footer-meta-inner {
+		width: 100%
+	}
+
+	#footer .footer-meta .footer-meta-inner .open-government-licence {
+		padding-left:0
+	}
+	
+	#footer .footer-meta .footer-meta-inner .open-government-licence span, #footer .footer-meta .footer-meta-inner .open-government-licence p, 
+	#footer .footer-meta .copyright {
+		font-size: 14px;
+		line-height: 1.14286
+	}
+	
+	#footer .footer-meta .copyright a {
+	  text-align: center;
+	  background-position: 50% 0%
+	}
+}
+
 @media only screen and (max-width: 600px) {
 	.phase-banner span {
 		width:75%
@@ -1613,7 +1700,7 @@ div.hodate input[type="text"] {
 		line-height:1.14286
 	}
 
-	.tlform .secheadertitle, fieldset.headingenabled legend, .tlform h1 {
+	.tlform .secheadertitle, fieldset.headingenabled legend, .tlform h1, .headinglarge {
 		font-size:19px;
 		line-height:1.25em
 	}
@@ -1701,33 +1788,8 @@ div.hodate input[type="text"] {
 
 	.tablerowbuttonscontainer {
 		display:block;
-		text-align:center
-	}
-	
-	.footer-meta {
-		padding:0 2px 0 7px
-	}
-	
-	.footer-meta .copyright {
 		text-align:center;
-	}
-	
-	.footerdiv .footer-meta .copyright a {
-		text-align: center;
-		padding: 115px 7px 0;
-		background-position-x:50%
-	}
-	
-	.footer-meta .copyright, .footer-meta-inner  {
-		width:100%
-	}
-	
-	.open-government-licence {
-		padding-left:0
-	}
-	
-	.open-government-licence p, .footerdiv .footer-meta .copyright a {
-		font-size:14px
+		margin-left:20px
 	}
 	
 	.button {
