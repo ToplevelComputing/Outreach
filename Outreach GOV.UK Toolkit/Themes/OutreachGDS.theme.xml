@@ -662,8 +662,8 @@
           <Color>#DF3034</Color>
         </Font>
         <Error>
-          <BackgroundColor>#fef7f7</BackgroundColor>
-          <BackgroundColorFlash>#fef7f7</BackgroundColorFlash>
+          <BackgroundColor>#fffefe</BackgroundColor>
+          <BackgroundColorFlash>#fffefe</BackgroundColorFlash>
         </Error>
       </SectionMessages>
       <MandatoryExplanation>
@@ -734,7 +734,7 @@
           </TableBody>
         </Tables>
         <Links>
-          <Color>#005ea5</Color>
+          <Color>#005b9f</Color>
           <HoverColor>#2e8aca</HoverColor>
         </Links>
       </FormContent>
@@ -786,7 +786,9 @@
   </CssSettings>
   <StringTableFileName>OutreachGDSCustomStrings.htm</StringTableFileName>
   <CustomJavaScript>
-    <GlobalScript>&lt;link rel="stylesheet" type="text/css" href="_static/GDS-sectionbuttons.css" /&gt;
+    <GlobalScript>&lt;script type="text/javascript"&gt;var reqFieldNames = new Array();&lt;/script&gt;
+
+&lt;link rel="stylesheet" type="text/css" href="_static/GDS-sectionbuttons.css" /&gt;
 &lt;link rel="stylesheet" type="text/css" href="_static/OutreachGDS.css" /&gt;
 &lt;link rel="stylesheet" type="text/css" href="_static/accordion.css" /&gt;
 
@@ -832,8 +834,12 @@ TLCustomOnLoad = function(args)
     $("input[type='radio']").change(function(){
         $("input[type='radio'][name='" + $(this).attr('name') + "']").each(function() {
             RemoveLabelChecked($(this));
+            var next = $(this).next("label");
+	    next.children().first().removeClass('selected');
         });
         CheckedLabel($(this));
+	var next = $(this).next("label");
+	next.children().first().addClass('selected');
     });
 
     $("input[type='checkbox']").change(function(){

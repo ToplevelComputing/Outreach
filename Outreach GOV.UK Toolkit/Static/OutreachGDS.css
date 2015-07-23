@@ -128,6 +128,10 @@ fieldset.headingenabled legend {
 	font-weight:normal
 }
 
+.labelsmall {
+	font-weight:700
+}
+
 .fieldmergedcolumn .importanttext {
 	padding-left:50px;
 	font-weight:700;
@@ -295,7 +299,7 @@ div.home {
 }
 
 .phase-banner .phase-tag {
-	background-color:#f47738;
+	background-color:#cb4e0f;
 	color:#fff;
 	font-size:18px;
 	font-weight:700!important;
@@ -328,7 +332,7 @@ div.home {
 }
 
 #footer a {
-	color:#454a4c
+	color:#43484a;
 }
 
 #footer a:hover {
@@ -473,7 +477,7 @@ a[title^="Accessibility"]:focus {
 .stepindicator {
 	font-size:24px;
 	line-height:1.25em;
-	color:#bfc1c3
+	color:#939597
 }
 
 /* 7. General field & caption CSS */
@@ -643,10 +647,20 @@ input[id$="__sm"] {
 	width:55%
 }
 
+.IE SELECT.listboxfield {
+	max-width:99%;
+	width:auto;
+	font-size:19px
+}
+
 .listboxfield {
 	max-width:99%;
 	width:auto;
 	font-size:19px
+}
+
+table .listboxfield {
+  font-size: 100%;
 }
 
 /* 10. Radio buttons and checkboxes */
@@ -727,10 +741,6 @@ input[type="radio"],input[type="checkbox"] {
 	float:left
 }
 
-fieldset.radiogroup, div.checkboxfield, .radiogroup_err, .checkboxfield_err {
-	vertical-align: top;
-}
-
 .tlform .radiogroup,.tlform .radiogroup_err {
 	margin:0
 }
@@ -748,10 +758,6 @@ fieldset.radiogroup, div.checkboxfield, .radiogroup_err, .checkboxfield_err {
 	width:100%
 }
 
-input[type="checkbox"][disabled="disabled"] {
-	display:none
-}
-
 div.fieldwidthmodifierradio {
 	width:100%
 }
@@ -765,16 +771,33 @@ div.fieldwidthmodifierradio {
 	float: none
 }
 
+table .checkboxfield label {
+	margin: 0.1em;
+	font-size:16px
+}
+
+table input[type="checkbox"] {
+	margin-top:6px
+}
+
+.IE10 table input[type="checkbox"],.IE9 table input[type="checkbox"],.IE8 table input[type="checkbox"] {
+	margin-top:3px
+}
+
 /* 11. Error and information message boxes */
 .aj_formmessage {
 	outline:none
 }
 
-.aj_formmessage h2[title="Error message"].info,.aj_formmessage h2[title="Error message"].info2,.aj_formmessage h2[title="section error"].info,.aj_formmessage h2[title="section error"].info2 {
+.aj_formmessage h2[title="Error message"].info,.aj_formmessage h2.naverr,.aj_formmessage h2[title="Error message"].info2,.aj_formmessage h2[title="section error"].info,.aj_formmessage h2[title="section error"].info2 {
 	border:3px solid #df3034;
 	padding:1em;
-	margin:.1em -1em 0 -1.2em;
+	margin:1.6px -16px 0 -19.2px;
 	border-color:#df3034
+}
+
+.tlform .naverr {
+	background-color:#fef7f7;
 }
 
 .tlform .custommsg {
@@ -871,7 +894,7 @@ legend .aj_formmessage {
 }
 
 .fieldrow_err {
-	background-color:#fef7f7;
+	background-color:#fffefe;
 	padding:20px 0 20px 17px;
 	border-left:3px solid #df3034;
 	margin-left:-20px
@@ -917,36 +940,10 @@ legend .aj_formmessage {
 	margin-bottom:0
 }
 
-.iconinfo {
-	background:url(info-iconx1.png) no-repeat;
-	width:30px;
-	height:30px;
-	display:inline-block;
-	margin-right:10px;
-	background-size:30px;
-	float:left
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2),not all,not all,not all,not all,not all {
-	.iconinfo {
-		background:url(info-iconx2.png) no-repeat;
-		width:30px;
-		height:30px;
-		display:inline-block;
-		margin-right:10px;
-		background-size:30px;
-		float:left
-	}
-
-	.eulogo {
-		width:63px;
-		height:42px;
-		display:inline-block;
-		float:right;
-		background:url(eu_logo_x2.png)no-repeat;
-		margin-right:20px;
-		background-size:100%
-	}
+.importanticon {
+	background: url(./icon-important.png) 0 0 no-repeat;
+	display: block;
+	min-height:34px
 }
 
 /* 13. Help text */
@@ -974,6 +971,7 @@ legend .aj_formmessage {
 	font-weight:normal;
 	font-size:16px;
 	line-height:22px;
+    width:95%;
 	max-width:100%
 }
 
@@ -1008,7 +1006,7 @@ legend .aj_formmessage {
 	display:block
 }
 
-.details > span {
+.hiddenhelpcontainer {
 	display:none
 }
 
@@ -1441,7 +1439,7 @@ div.hodate input[type="text"] {
 	padding-bottom:26px
 }
 
-.dlgcontent .fieldinputcolumn {
+.dialog .fieldinputcolumn, .dlgcontent .fieldinputcolumn {
 	width:55%
 }
 
@@ -1749,8 +1747,7 @@ div.hodate input[type="text"] {
 	}
 	
 	.tl_responsivetable table.tltable th,.tl_responsivetable table.tltable td {
-		padding-left:50%;
-		border-bottom:dotted 1px #b8c6cc!important
+		padding-left:49%
 	}
 	
 	.formsectionbody .tl_nonresponsivetable table.tltable th,.formsectionbody .tl_nonresponsivetable table.tltable td {
@@ -1792,7 +1789,7 @@ div.hodate input[type="text"] {
 		margin-left:20px
 	}
 	
-	.button {
+	.button, .buttondisabled {
 		font-size:16px!important
 	}
 	
@@ -1802,6 +1799,19 @@ div.hodate input[type="text"] {
 	
 	.details::before {
 		font-size:10px
+	}
+	
+	.tl_responsivetable table .checkboxfield label {
+		padding:18px 10px 15px 37px;
+		font-size:12px
+	}
+	
+	.tl_responsivetable table input[type="checkbox"] {
+		margin:0px 0 0 -20px
+	}
+	
+	.tl_responsivetable .IE10 table input[type="checkbox"] {
+		margin-top:-3px
 	}
 }
 

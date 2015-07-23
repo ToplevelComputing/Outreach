@@ -30,7 +30,7 @@ function TopErrorMessage() {
 				}
             }
 		
-			if (i == 4) {
+			if (i == 5) {
                 errorHTML += "<div class=\"hiddenerrors\">";
                 showMoreClosingCode = "</div><div style=\"text-align:right\"><button type=\"button\" id=\"showmorebutton__link\" class=\"morelink\" onclick=\"ToggleExtraErrors();\">More</button></div>";
             }
@@ -39,10 +39,10 @@ function TopErrorMessage() {
 				$(this).html("<span id='aerror" + (i + 1) + "'>" + (i + 1) + ". " + $(this).html() + '</span>');
             }
 			
-			if (i > 4) {
-				errorHTML += "<a href='#aerror" + (i + 1) + "' id='message" + (i + 1) + "' name='message" + (i + 1) + "' class='aerror'>" + $(this).find("span").html() + "</a><br/>";
+			if (i >= 5) {
+				errorHTML += "<a href='#aerror" + (i + 1) + "' id='message" + (i + 1) + "' name='message" + (i + 1) + "' class='aerror' onclick=\"ScrollToFieldInError(event, 'aerror" + (i + 1) + "');\">" + $(this).find("span").html() + "</a><br/>";
 			} else {
-                $("h2.info").html($("h2.info").html() + "<a href='#aerror" + (i + 1) + "' id='message" + (i + 1) + "' name='message" + (i + 1) + "' class='aerror'>" + $(this).find("span").html() + "</a><br/>");
+                $("h2.info").html($("h2.info").html() + "<a href='#aerror" + (i + 1) + "' id='message" + (i + 1) + "' name='message" + (i + 1) + "' class='aerror' onclick=\"ScrollToFieldInError(event, 'aerror" + (i + 1) + "');\">" + $(this).find("span").html() + "</a><br/>");
 			}
         });
 	if (haslist === true) {
@@ -51,6 +51,38 @@ function TopErrorMessage() {
             if ($(this).find(".fielderrortext").length != 0 && !$(this).parents(".fieldrow_err").length) $(this).parent().addClass("fieldrow_err");
         });
     }
+}
+
+function ScrollToFieldInError(e, errorId){
+	e.preventDefault();
+	var fieldInError;
+	var fieldId = "";
+	
+	try {
+		fieldInError = $('#' + errorId).parents('.fielderrortext')[0].id.replace("err_","");
+		// Attempt to locate field on page (ID varies for text/date/radio/etc. fields.)
+		if($("#s2id_F_" + fieldInError).length > 0) {
+			// Multi-select listbox
+			fieldId = "s2id_F_" + fieldInError;
+		} else if($("#F_" + fieldInError).length > 0) {
+			// Text/dropdown/listbox field
+			fieldId = "F_" + fieldInError;
+		} else if ($("#FD_" + fieldInError).length > 0) {
+			// Date field
+			fieldId = "FD_" + fieldInError;
+		}  else if ($("#FH_" + fieldInError).length > 0) {
+			// Time
+			fieldId = "FH_" + fieldInError;
+		} else if ($("#FLR_0_" + fieldInError).length > 0) {
+			// Radio group
+			fieldId = "FLR_0_" + fieldInError;
+		}
+	} catch(e) {
+		console.log("Could not focus on erroneous field, potentially unhandled field type.");
+	}
+	// Scroll to error and move focus to erroneous field.
+	// If we couldn't locate the erroneous field id, we don't attempt to move focus to it.
+    $('html,body').animate({scrollTop: $("#"+errorId).offset().top}, 'fast', 'linear', function() {if(fieldId != "") $("#"+fieldId).focus();});
 }
 
 function ToggleExtraErrors() {
@@ -179,14 +211,23 @@ function SlideShow()
 // Initialises any custom expandable help items (drop, guidance, help)
 function InitDetailsSummary() {
     $('html').addClass('detailscompatible');
-
+	
+	$('html.detailscompatible .details span').each(function () {
+		$(this).addClass('hiddenhelpcontainer')
+	});
+	
 	$('html.detailscompatible .summary, html.detailscompatible .helpsummary').each(function () {
 		if(!$(this).next('br').next('.detailwrap').length) {
 			$(this).next('br').nextAll().wrapAll('<span class="detailwrap"></span>');
+			$(this).parent('.details').toggleClass('open');
+			$(this).prop('disabled', false);
 			$(this).click(function (e) {
 				e.preventDefault();
 				$(this).siblings('span.detailwrap').slideToggle("fast", function () {
 					$(this).parent('.details').toggleClass('open');
+					$(this).children('span').each(function () {
+						$(this).toggleClass('hiddenhelpcontainer')
+					});
 				});
 			});
 			$(this).keyup(function (e) {
