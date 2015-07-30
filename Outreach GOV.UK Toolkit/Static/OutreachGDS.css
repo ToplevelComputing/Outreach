@@ -445,19 +445,12 @@ div.home {
 }
 
 a[title^="Accessibility"] {
-	position: absolute;
-	left: -10000px;
-	top: auto;
-	width: 1px;
-	height: 1px;
-	overflow: hidden
+	position:relative;
+	top:-500px
 }
 
 a[title^="Accessibility"]:focus {
-	position: static;
-	width: auto;
-	height: auto;
-	background-color: white
+	top:0
 }
 
 .linkbaritem {
@@ -1469,61 +1462,47 @@ div.hodate input[type="text"] {
 }
 
 /* 20. Summary section */
-.tl_responsivetable #aj_htmltable_Summary td[id^="BTD_Summary"] {
-	display:none
+#Summary_element .fieldmergedcolumn, #ajOldId_Summary_element .fieldmergedcolumn {
+	line-height:1
 }
 
-.tl_responsivetable #aj_htmltable_Summary th[id^="BTD_Summary"] {
-	display:none
+#Summary_element .captionitem, #ajOldId_Summary_element .captionitem {
+	max-width:initial
 }
 
-#aj_tablemain_Summary .tablerowodd {
-	background-color:#fff
+.summaryelement .summ-sec-heading {
+    font-weight: bold;
+    border-bottom: 1px solid #bfc1c3;
+    padding: 15px 0;
 }
 
-#aj_tablemain_Summary table.tltable tbody tr.section {
-	border-bottom:1px solid #BDBCBC!important
+.summaryelement .summ-row {
+    padding: 15px 0;
+    font-size: 16px;
+    border-bottom: 1px solid #dee0e2;
 }
 
-#aj_tablemain_Summary table.tltable tbody tr {
-	border-top:none!important
+.summaryelement .summ-row .summ-name-col, .summaryelement .summ-row .summ-val-col, .summaryelement .summ-row .summ-act-col, 
+.summaryelement .summ-row .summ-tablename-col, .summaryelement .summ-row .summ-tableval-col {
+	display: inline-block;
+	vertical-align:top
 }
 
-#aj_tablemain_Summary table.tltable thead {
-	display:none
+.summaryelement .summ-row .summ-name-col, .summaryelement .summ-row .summ-tablename-col {
+    width: 55%;
 }
 
-#aj_tablemain_Summary tr.section>td {
-	width:104%;
-	font-size:24px;
-	line-height:1.11111;
-	font-weight:700;
-	margin-top:8px;
-	margin-bottom:20px
+.summaryelement .summ-row .summ-val-col {
+    width: 35%;
 }
 
-#aj_tablemain_Summary td,#aj_tablemain_Summary td a {
-	font-size:16px
+.summaryelement .summ-row .summ-act-col {
+    float: right;
+    margin-right: 15px
 }
 
-.formsectionbody #aj_htmltable_Summary .summaryBorderlessRow {
-	border-bottom: 1px solid #fff!important;
-	padding-bottom: 0
-}
-
-.formsectionbody #aj_htmltable_Summary td ol {
-	padding-left:20px;
-	margin:0
-}
-
-.formsectionbody #aj_htmltable_Summary td li {
-	padding-left:15px;
-	padding-bottom:10px;
-	margin:0
-}
-
-#aj_htmltable_Summary td a {
-	float: right;
+.summaryelement .summ-row .summ-act-col a{
+	text-decoration: none
 }
 
 /* 21. Responsive handling */
@@ -1753,34 +1732,19 @@ div.hodate input[type="text"] {
 	.formsectionbody .tl_nonresponsivetable table.tltable th,.formsectionbody .tl_nonresponsivetable table.tltable td {
 		padding-left:0;
 	}
-
-	.formsectionbody #aj_htmltable_Summary th, .formsectionbody #aj_htmltable_Summary td {
-		padding-left:0
+	
+	.summaryelement .summ-row .summ-name-col {
+		display:block;
+		font-weight:700
 	}
 	
-	.tl_responsivetable #aj_htmltable_Summary tr {
-		border:none
+	.summaryelement .summ-row .summ-tablename-col {
+		font-weight:700
 	}
 
-	.tl_responsivetable #aj_htmltable_Summary tbody {
-		display:table-row-group
-	}
-
-	.tl_responsivetable #aj_htmltable_Summary tr {
-		display:table-row
-	}
-
-	.tl_responsivetable #aj_htmltable_Summary td,.tl_responsivetable #aj_htmltable_Summary th {
-		display:table-cell;
-		position:static
-	}
-
-	.tl_responsivetable #aj_htmltable_Summary .tablerowbuttonsresponsive {
-		display:none
-	}
-
-	#aj_tablemain_Summary tr.section>td {
-		width:0
+	.summaryelement .summ-row .summ-val-col {
+		padding-top:10px;
+		width:auto
 	}
 
 	.tablerowbuttonscontainer {

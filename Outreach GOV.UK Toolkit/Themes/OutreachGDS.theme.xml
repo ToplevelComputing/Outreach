@@ -807,7 +807,7 @@
 TLCustomOnLoad = function(args)
 {
   checkCookieSeen();
-
+    FocusOnUserNameIfLogonDialog();
   $("input.formtextfield_erra").change(function () {
         TopErrorMessage();
         

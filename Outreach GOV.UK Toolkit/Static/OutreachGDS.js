@@ -114,6 +114,11 @@ function ScrollToTopIfSectionErrorShowing() {
 	}
 }
 
+// Moves focus to the user name field if on the logon dialog
+function FocusOnUserNameIfLogonDialog() {
+	if($(".LogonDialog #F_UserCode").length > 0) $(".LogonDialog #F_UserCode").focus();
+}
+
 // Inserts the Day, Month, Year labels above the date field
 function GDSDateChange() {
     $(".datefielddata").find("> label").remove();
@@ -213,7 +218,7 @@ function InitDetailsSummary() {
     $('html').addClass('detailscompatible');
 	
 	$('html.detailscompatible .details span').each(function () {
-		$(this).addClass('hiddenhelpcontainer')
+		if(!$(this).hasClass('screenreader')) $(this).addClass('hiddenhelpcontainer');
 	});
 	
 	$('html.detailscompatible .summary, html.detailscompatible .helpsummary').each(function () {
@@ -226,7 +231,7 @@ function InitDetailsSummary() {
 				$(this).siblings('span.detailwrap').slideToggle("fast", function () {
 					$(this).parent('.details').toggleClass('open');
 					$(this).children('span').each(function () {
-						$(this).toggleClass('hiddenhelpcontainer')
+						if(!$(this).hasClass('screenreader')) $(this).toggleClass('hiddenhelpcontainer');
 					});
 				});
 			});
@@ -346,4 +351,10 @@ function PdfDownload() {
 // PDF close button handler
 function PdfClose() {
     $(".PDFOptions input[name='BB_NoBtn']").click();
+}
+
+function SubmitSummaryLink(summaryactionlink) {
+	m_sLastButtonPressed = summaryactionlink;
+	if ((typeof(sendAjaxRequest) == "undefined") || sendAjaxRequest()) document.forms[TLFormName].submit();
+	return false;
 }
